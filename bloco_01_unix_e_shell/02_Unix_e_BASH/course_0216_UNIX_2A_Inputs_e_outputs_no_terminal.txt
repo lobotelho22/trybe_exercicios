@@ -1,0 +1,52 @@
+Unix: Inputs & Outputs no terminal
+
+------------O COMANDO CAT---------------
+
+Se iniciarmos o comando "cat" sem referenciar um arquivo, ele exibe um cursor que nos permite digitar palavras. Ao dar ENTER, o terminal exibe o conteúdo digitado. Para sair do comando, clicamos no atalho CNTRL+D.
+
+É possível utilizar o "cat" para realmente atribuir valores em um arquivo. Ex:
+
+	$ cat > cores.txt
+	
+O terminal abre um cursor que permite digitar valores no arquivo criado (cores.txt). Ao sair com o atalho CNTRL+D, o conteúdo digitado é gravado em cores.txt. Neste caso o sinal ">" significa um input no arquivo indicado.
+
+Toda vez que o sinal de maior é utilizado nesse contexto o conteúdo do arquivo é SOBRESCRITO. Para adicionarmos valores, é necessário utilizar o sinal duplo (>>)
+
+	$ cat >> cores.txt
+
+O comando dado abre um cursor de edição que salva os dados de entrada após o conteúdo já existente no arquivo.
+
+Podemos utilizar o cat para combinarmos o conteúdo de dois ou mais arquivos em um terceiro:
+
+	$ cat cores.txt lista.txt > compra.txt
+	
+Neste caso o conteúdo dos arquivos cores.txt e lista.txt são inseridos no arquivo compra.txt, que pode ser um arquivo já existente ou um arquivo novo.
+
+----------- COMANDO SORT ---------------
+
+Este comando ordena as linhas de um arquivo. Podemos utilizar esse comando como um output (saída), ou seja, sem alterar a ordem original do arquivo. Se você utiliza o comando da seguinte forma:
+
+	$ sort < lista.txt
+	
+O terminal exibirá os dados do arquivo lista.txt sem alterar a ordem dos itens no interior do arquivo. Se utilizarmos o sinal de input (>) podemos ordenar e salvar essa alteração no arquivo indicado, ou mesmo em um arquivo novo:
+
+	$ sort < lista.txt > listaOrdenada.txt
+
+Aqui indicamos que o sistema pegará os itens de lista.txt, os ordenará e salvará ordenado no novo arquivo chamado listaOrdenada.
+
+----------- COMANDO WHO -------------------
+
+Esse comando exibe na tela do sistema os usuários que tem acesso ao terminal utilizado.
+
+	entrada: $ who
+	saída: eduardo  :0           2022-02-17 05:58 (:0)
+	
+----------- PIPE / BARRA VERTICAL -----------
+
+Esse item junta comandos diferentes em uma mesma linha de comando. Ex:
+
+	$ who | sort
+
+Essa linha é executada da seguinte forma: o sistema ao executar o comando who lista os usuários do sistema, em sequência organiza a lista resultante e exibe a lista ordenada como saída desta linha.
+
+

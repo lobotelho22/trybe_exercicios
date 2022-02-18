@@ -1,0 +1,15 @@
+UNIX: Trabalhando com diretórios
+
+cd / => move para a raiz (root) do sistema
+
+O comando "ls" lista todos os arquivos e diretórios (pastas) localizados no diretório onde o usuário se encontra.
+
+Podemos acrescentas outros comandos ao "ls". Por exemplo, se usamos o comando "-a", digitando "ls -a" teremos a exibição de todos os arquivos e diretórios, incluindo os que estiverem eventualmente ocultos.
+
+Para abrimos diretórios, acessá-los, utilizamos o comando "cd" e o nome da pasta a ser acessada. Por exemplo: "cd etc" irá acessar o diretório etc e se usamos o comando ls, listaremos os arquivos localizados ali.
+
+Podemos criar diretórios utilizando o comando "mkdir" acompanhado do nome do diretório.
+
+Para referenciar o caminho em que estamos utilizamos "cd .". Se queremos retornar a pasta anterior, utilizamos "cd .."
+
+Se estivermos perdidos, querendo saber a informação da localização completa, utilizamos o comando "pwd"

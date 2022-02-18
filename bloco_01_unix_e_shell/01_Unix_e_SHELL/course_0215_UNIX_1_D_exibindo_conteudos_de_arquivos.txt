@@ -1,0 +1,27 @@
+UNIX: Exibindo Conteúdos de Arquivos
+
+Comando "less"
+
+Exibe um conteúdo por página: "less [nome do arquivo]". O comando abre um comando de visualização diferente, por paginação, como um ambiente próprio e, portanto, não fica exibido nas linhas do terminal. Podemos efetuar buscas no arquivo, quando, na exibição, digitarmos / e o texto a ser buscado, navegamos pelas ocorrências digitando a letra n.
+
+Comando "head"
+
+Exibe as dez primeiras linhas de um arquivo, por padrão. Se utilizarmos, por exemplo: "head -5 filmes.txt", o comando exibirá apenas as primeiras cinco linhas do arquivo filmes.txt
+
+Comando "tail"
+
+Este comando funciona como o head, mas exibe as últimas linhas do arquivo. Por padrão, também exibe as dez últimas linhas do arquivo.
+
+Comando "grep"
+
+Esse comando busca um termo em um arquivo. Observe que o termo, por padrão, é case sensitive. A sintaxe do comando é: "grep [TERMO BUSCADO] [NOME DO ARQUIVO]". Para ignorarmos a diferença entre maiúsculas e minúsculas, podemos utilizar "grep -i [TERMO BUSCADO] [NOME DO ARQUIVO]". Se usamos o complemento -iv, fazemos a busca reversa. Podemos identificar a linha de ocorrência, se usarmos o complemento -in. Podemos ter a quantidade de ocorrências, utilizando '-ic'.
+
+Podemos buscar no grep termos complexos - frases, por exemplo. Para isso, colocamos o termo entre apóstrofos: 'vou buscar essa frase'.
+
+Comando "wc" - WORD COUNT
+
+Exibe, nesta ordem: quantidade de linhas, palavras e caracteres. Se usarmos o complemento -w, ele conta palavaras, -l, conta linhas e -c conta os caracteres, somente.
+
+
+
+

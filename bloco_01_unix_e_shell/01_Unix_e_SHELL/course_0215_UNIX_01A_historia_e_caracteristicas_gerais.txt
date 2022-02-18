@@ -1,0 +1,41 @@
+Unix
+
+Sistema operacional lançado em 1969
+
+Objetivos:
+
+-Executar comandos no terminal para navegar entre diretórios;
+
+- Executar comandos no terminal para criar e manipular arquivos e diretórios;
+
+- Executar comandos no terminal para realizar buscas;
+
+
+Sistemas operacionais baseados em UNIX são indicados como a melhor opção de hospedagem para projetos web, por conta de seu custo, performance e facilidade de interação.
+
+Por que utilizar linhas de comando ao invés de interface gráfica? Simplicidade, estabilidade, rapidez, eficiência e baixo consumo de hardware
+
+
+UNIX / SHELL / KERNEL
+
+Unix: Desenvolvido por Ken Thompson e Dennis Ritchie, utilizando a linguagem C
+
+Oferece suporte a multiusuarios, é multitarefas e portabilidade
+
+Como funciona o Unix?
+
+- É montado em três níveis
+
+- O primeiro desses níveis é o Kernel, responsável pela interação entre software e hardware // começa a funcionar a partir do momento em que a máquina é ligada. Ferencia memória, processos e arquivos
+
+- O segundo nível é o SHELL, responsável pela interaçlão entre usuário, sistema operacional e Kernell. Pode ser linha de comando ou interface gráfica. Responsável por ler a linha de comando, interpretar e executar o comando, devolvendo o resultado ao usuário. EX: SH, BASH, TCSH e ZSH
+
+- O terceiro nível é o dos aplicativos, aqui se encontram softwares e comandos disponíveis aos usuários
+
+PROCESSOS / ARQUIVOS
+
+PROCESSOS: tudo o que fazemos no UNIX é um processo, cada execução de tarefa ou comando é interpretado pelo SO como um processo. Cada processo possui um identificador único, chamado PID: Process Identifier, que carrega informações como o usuário proprietário do processo, a sessão do shell, seu estado atual, etc
+
+ARQUIVOS: tudo é arquivo: dispositivos, diretórios, arquivos, etc. Em UNIX os arquivos são organizados como um sistema de raiz, sendo o básico, o primeiro nível o / ou root. As classificações e informações dos arquivos são de várias ordens: nome, data, tipo, tamanho, dono, permissões, hard links, etc
+
+ 

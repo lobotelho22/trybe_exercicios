@@ -1,0 +1,119 @@
+Unix: Processos no Unix
+
+------------- Comando PS --------------
+
+É o comando responsábel por exibir os processos executados no momento. O comando $ ps retorna da seguinte forma:
+
+    PID TTY          TIME CMD
+   2882 pts/0    00:00:15 zsh
+  16368 pts/0    00:00:00 ps
+
+Já vimos que o PID é um número que identifica cada processo de modo biunívoco.
+
+Processos podem estar em execução, em background ou suspensos. Podemos utilizar o comando sleep para criarmos um processo que para o uso do terminal por alguns segundos. Por exemplo:
+
+	$ sleep 15
+
+Esse comando suspende o uso do terminal por 15 segundos, retornando com o prompt após esse intervalo. Podemos utilizar a opção &, para fazer com que o processo rode em background. Ao digitar:
+
+	$ sleep 15 &
+
+temos a saída:
+
+	[1] 17657
+
+isso indica que há um processo sleep em andamento, indexado por [1] e identificado pelo PID 17657. Após o encerramento do processo, o terminal nos retorna:
+
+	[1]  + 17657 done       sleep 15
+
+Um aviso que serve para indicar o fim do processo.
+
+Se durante este intervalo digitarmos o comando PS, nosso processo sleep entra na listagem:
+	
+
+    PID TTY          TIME CMD
+   2882 pts/0    00:00:19 zsh
+  18555 pts/0    00:00:00 sleep
+  18561 pts/0    00:00:00 ps
+
+Se, por ventura, precisarmos interromper um processo, podemos fazê-lo através do comando CNTRL+Z. Imagine que digitamos:
+
+	$ sleep 300
+		
+Ao dispararmos o CTRL+Z, o terminal nos retorna:
+
+	[1]  + 18875 suspended  sleep 350
+
+Podemos verificar que o processo está com o status SUSPENDED. Se executarmos o comando:
+
+	$ bg
+
+Teremos como retorno do terminal a informação:
+
+	[1]  + 18875 continued  sleep 350
+
+Isso nos indica que o processo está sendo executado em background. O que o comando ps nos confirma:
+
+    PID TTY          TIME CMD
+   2882 pts/0    00:00:20 zsh
+  18875 pts/0    00:00:00 sleep
+  18997 pts/0    00:00:00 ps
+
+Todos os processos, em todos os seus status possíveis ficam em uma lista chamada jobs, que podemos acessar pela linha de comando:
+
+	 $ jobs
+
+No nosso caso, temos o retorno:
+
+	[1]  + running    sleep 350
+	
+Podemos fazer com que um processo suspenso pelo CTRL+Z retorne à execução "em primeiro plano", pelo comando fg:
+
+	entrada: $ sleep 600
+	entrada: ^Z (ctrl+z)
+	saída: [1]  + 19214 suspended  sleep 600
+	
+	entrada: $ fg
+	saída: [1]  + 19214 continued  sleep 600
+	
+Podemos encerrar um processo pelo atalho cntrl+C. No presente exemplo, se efetuarmos o comando no teclado, mataremos o processo 19214 sleep 600. Isso acontece porque o processo está sendo executado foreground (primeiro plano), mas e se o caso for de encerrar um processo em background?
+
+----------- O COMANDO KILL ----------------
+
+Podemos utilizar o comando kill para encerrarmos processos a partir da lista jobs.
+
+	entrada: $ jobs
+	saída: [1]  + running    sleep 350
+	       [2]  - running    sleep 600
+	
+	entrada: $ kill %1
+	saída: [1]  + 19317 terminated  sleep 350 
+	
+	entrada: $ jobs
+	saída: [2]  + running    sleep 600
+	
+Ou seja, a linha de comando kill acompanhada do sinal % pede a indexação de acordo com a lista jobs, para encerrar o referido processo. Para matar um processo a partir do PID, devemos digitar o comando kill acompanhado do referido PID:
+
+	entrada: $ ps
+	saída:     PID TTY          TIME CMD
+		   2882 pts/0    00:00:23 zsh
+		  19350 pts/0    00:00:00 sleep
+		  19652 pts/0    00:00:00 ps
+		  
+Para matarmos o processo sleep, digitaríamos:
+
+	entrada: $ kill 19350
+	saída: [2]  + 19350 terminated  sleep 600
+	
+	entrada: $ ps
+	saída:	    PID TTY          TIME CMD
+             	   2882 pts/0    00:00:23 zsh
+             	  19766 pts/0    00:00:00 ps
+             	  
+O processo sleep, de PID 19350 foi encerrado.
+
+No caso de processos que se recusem a ser encerrados, podemos encerrá-los pelo comando:
+
+	$ kill -9 [número do processo]
+ 
+

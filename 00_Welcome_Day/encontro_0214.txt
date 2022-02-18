@@ -1,0 +1,28 @@
+Básico:
+Unix / Bash
+html / CSS
+JavaScript & Dom
+
+Front-End:
+React <-
+
+Back-End:
+SQL & NoSQL
+Node e Express JS
+
+Ciência da Computação
+Python & OOP
+Algoritmos, estrutura de dados e Resolução de problemas
+
+
+
+-----------------
+ALADINO BORGES
+
+Não ensina a programar // aprender a aprender
+Saiu do módulo de front-end dominando React
+Desenvolveu rápido aprendizado
+Foco, dedicação - O curso não é fácil
+
+Dedicação aos fundamentos do curso
+Front-End e Back-End muitas novidades...

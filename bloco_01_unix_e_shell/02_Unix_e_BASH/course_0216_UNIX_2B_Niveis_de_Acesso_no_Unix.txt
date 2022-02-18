@@ -1,0 +1,107 @@
+Unix: Níveis de Acesso no Unix
+
+Nem todos os arquivos e acessos são permitidos a todos os usuários. O comando ls, já vimos, lista o conteúdo de uma pasta. Se utilizarmos o argumento "-l" a listagem aparecerá com algumas informações a respeito dos arquivos. Vejamos o exemplo:
+
+	entrada: $ eduardo:unix_tests/ $ ls -l
+	
+	saída:
+	
+	total 32
+	drwxrwxr-x 2 eduardo eduardo 4096 fev 16 18:25 backups
+	-rw-rw-r-- 1 eduardo eduardo   49 fev 16 19:06 bigList.txt
+	-rw-rw-r-- 1 eduardo eduardo   49 fev 16 19:10 bigSortedList.txt
+	-rw-rw-r-- 1 eduardo eduardo   27 fev 16 19:05 list2.txt
+	-rw-rw-r-- 1 eduardo eduardo   22 fev 16 19:04 list.txt
+	-rw-rw-r-- 1 eduardo eduardo   24 fev 17 06:50 names.txt
+	-rw-rw-r-- 1 eduardo eduardo 7767 fev 16 18:23 science.txt
+	-rw-rw-r-- 1 eduardo eduardo    0 fev 16 18:22 trybe_backup.txt
+	
+As informações são listadas em colunas. As informações são organizadas conforme o esquema abaixo:
+
+  Permissões | Links  | Proprietário | Grupo | Tamanho | Data e Hora   | Nome
+  -----------|--------|--------------|-------|---------|---------------|---------
+  drwxr-xr-x | 2      | root         | root  | 4096    | Out 19 09:10  | composer/
+
+
+	Permissões => É possível verificar o tipo do item e nível de permissão para Leitura, Escrita e Execução de item ou diretório;
+	
+	Links => Número de ligações que o item possui, no caso do diretório, número de subdiretórios que possui;
+	
+	Proprietário => Quem é a pessoa dona, quem criou. É o diretório padrão da pessoa usuária, o home;
+	
+	Grupo => Grupo ao qual pertence o item ou diretório. Utilizado para dar permissões à outras pessoas;
+	
+	Tamanho => Em Bytes;
+	
+	Data e Hora => Momento em que foi criado ou última modificação;
+	
+	Nome => Nome do item ou diretório;
+
+Como o sistema UNIX é multiusuário, o sistema de níveis de acesso garante o gerenciamento de quem pode fazer o quê com cada arquivo do sistema. Se criamos um arquivo .txt, por padrão seu nível de acesso será:
+
+	-rw-rw-r--
+
+A letra 'r' indica que o usuário tem nível de LEITURA (Read), a letra 'w' indica que o nível é de ALTERAÇÃO (write), ou seja aqui o usuário pode editar ou modificar o arquivo. A letra 'x' indica que este usuário pode acessar um arquivo ou diretório pelo comando cd (eXecute) e se há um hífen '-' no início da sequência, a indicão é que se trata de um arquivo comum. Caso se inicie por 'd', sabemos que se trata de um diretório.
+
+A sequência de caracteres se organiza em QUATRO GRUPOS:
+
+	- O primeiro grupo, de um caractere se define por - ou d e indica se temos um arquivo ou comum um diretório;
+	- O segundo grupo, de três caracteres, indica os acessos de um usuário: r indica leitura, w indica escrita e x indica que o arquivo pode ser executado. Caso não seja possível uma ou mais dessas ações, em lugar da letra será exibido um hífen. No nosso exemplo, por se tratar de um arquivo de texto, não há possibilidade de execução. Logo, esse grupo está definido pela sequência: rw-;
+	- O terceiro grupo indica o acesso do grupo a que o usuário pertence;
+	- O último grupo diz respeito aos níveis de acesso que outros usuários, que não pertencem ao grupo do usuário dono do arquivo, possuem.
+	
+	VER IMAGEM: course - 0216 - UNIX 2 B - img 01.png
+	
+--------------- ALTERANDO PERMISSÕES DE ARQUIVOS: CHMOD ----------------
+
+Com este comando podemos informar quais os tipos de permissão que concedemos a um arquivo.
+
+	$ chmod u => o 'u' indica que estamos alterando níveis ao usuário;
+	$ chmod g => o 'g' indica que estamos alterando níveis do grupo;
+	$ chmod o => o 'o' indica que estamos alterando níveis de outros usuários;
+	$ chmod a => o 'a' indica que estamos alterando níveis para todos os usuários
+	
+Para alterar os níveis de permissões, utilizamos os caracteres: +, =, -
+
+	O caractere + indica que estamos aumentando a permissão;
+	O caractere = indica que estamos mantendo o nível atual;
+	O caractere - indica que estamos diminuindo o nível atual.
+	
+Por exemplo, digamos que para um arquivo chamado lista.txt nós queiramos tirar as permissões de leitura e escrita (rw) a um usuário. Nesse caso, entraríamos com o código:
+
+	$ chmod u-rw lista.txt
+	
+Após executarmos esse comando, se tentarmos acessar o arquivo, utilizando, por exemplo less lista.txt, teremos o seguinte retorno no terminal:
+
+	$ lista.txt: Permissão negada
+	
+Podemos verificar com o comando '$ ls lista.txt -l' o seguinte retorno:
+
+	----rw-r-- 1 eduardo eduardo 22 fev 16 19:04 lista.txt
+	
+Vemos que nos três caracteres destinados ao usuário temos '---', sabemos que isso indica que não permissão de leitura, escrita ou execução. Para retornarmos ao valor padrão, precisamos entrar o comando:
+	
+	$ chmod u+rw lista.txt 
+	
+É possível ver com o comando de list anteriormente feito que restauramos o padrão anterior:
+
+	-rw-rw-r-- 1 eduardo eduardo 22 fev 16 19:04 lista.txt
+	
+Outra forma de manipular as permissões de um arquivo é através de códigos númericos que se relacionam a códigos binários que indicam as permissões. Isso é feito conforme a tabela abaixo:
+
+	--- = 000 ( 0 | Todos Acessos Negados )
+	--x = 001 ( 1 | Somente Execução )
+	-w- = 010 ( 2 | Somente Escrita )
+	-wx = 011 ( 3 | Somente Escrita e Execução )
+	r-- = 100 ( 4 | Somente Leitura )
+	r-x = 101 ( 5 | Somente Leitura e Execução )
+	rw- = 110 ( 6 | Somente Leitura e Escrita )
+	rwx = 111 ( 7 | Acesso Total )
+	
+Se quisermos alterar permissões utilizando código numérico, devemos obedecer à sintaxe: 'chmod DDD Nome_do_arquivo' onde DDD representa os dígitos correspondentes à tabela, na seguinte ordem usuário, grupo, todos. Tomemos como exemplo o comando abaixo:
+
+	$ chmod 766 novo.txt 
+	
+Este comando irá fornecer acesso total ao usuário (7) e somente leitura e escrita (6) ao grupo e aos outros usuários.
+
+

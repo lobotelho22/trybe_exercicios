@@ -1,0 +1,23 @@
+UNIX: Copiar, mover e remover arquivos e diretórios
+
+Comando "cp"
+
+Esse comando cria uma cópia de um arquivo ou diretório. Por exemplo, a linha "cp arquivo1.txt arquivo2.txt" cria uma cópia do arquivo1.txt nomeado como arquivo2.txt, no mesmo diretório onde o primeiro se encontra.
+
+Comando "cat"
+
+Abeviação de concatenate, serve para abrir (ler) arquivos. Por exemplo, "cat arquivo1.txt" exibiria o conteúdo do arquivo1.txt no prompt
+
+Comando "mv"
+
+Move um arquivo entre diretórios. A linha de comando "mv arquivo2.txt /home/eduardo/CARAMBA" move o arquivo2.txt da pasta onde ele se encontra para o caminho indicado.
+
+Comando "rm" => remove
+
+Apaga um arquivo do disco rígido. A linha de comando "rm arquivo2.txt" remove o referido arquivo do diretório onde pertence.
+
+Comando "rmdir" => remove directory
+
+Apaga um diretório. "rmdir ArqMus" apaga um diretório ArqMus, somente se o mesmo estiver vazio.
+
+Para eliminarmos diretórios não-vazios, utilizamos o comaando "rm" com a opção "-r", da seguinte forma "rm -r EXEMPLO". Neste caso, removeria um diretório nomeado EXEMPLO ainda que este não estivesse vazio.

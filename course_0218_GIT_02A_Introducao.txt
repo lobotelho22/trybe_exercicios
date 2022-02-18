@@ -1,0 +1,65 @@
+Git
+
+É um sistema de controle de versão, que permite trabalho em grupo em um mesmo projeto e apresenta ferramentas capazes de resolver os mais variados problemas que podem surgir nesse processo, relacionado à alterações e versões de arquivos.
+
+Objetivos do bloco:
+
+	-> Instalar e configurar o Git no computador;
+	-> Salvar projetos no repositório local;
+	-> Controlar as alterações e versões dos seus arquivos;
+	-> Enviar seus projetos para o repositório remoto do GitHub
+
+O GitGHub é uma ferramenta online que hospeda repositórios Git, e é uma excelente ferramenta para gestão do código e trabalho em grupo.
+
+-------------| Controle de Versão |-------------------
+
+O que é controle de versão?
+
+É um sistema que registra alterações em um arquivo ou conjunto de arquivos ao longo do tempo, para que possamos lembrar/recuperar versões específicas em um momento futuro.
+Podemos utilizar, por exemplo, para gerenciarmos versões de layouts em design gráfico, planilhas de controle, códigos colaborativos ou individuais, etc.
+
+
+Sistemas Distribuídos de Controle de Versão
+
+São sistemas que permitem ao usuário não o uso direto de um estado mais recente de um arquivo, mas eles duplicam localmente o repositório completo. Assim sistemas que colaboram por meio de um servidor trabalham autonomamente e retornam uma cópia de seu trabalho ao servidor para uma eventual restauração.
+
+	fig 01 - distributed
+	
+Além disso, muitos desses sistemas trabalham muito bem com vários repositórios remotos, tal que você possa colaborar em diferentes grupos de pessoas de maneiras diferentes ao mesmo tempo dentro do mesmo projeto. Isso permite que você configure vários tipos de fluxos de trabalho que não são possíveis em sistemas centralizados, como modelos hierárquicos.
+
+O Básico do Git
+
+O Git trata seus dados como um conjunto de imagens de um sistema de arquivos em miniatura. Toda vez em que se faz um <b>commit</b> ou salva o estado de um projeto no Git, é como se o sistema fotografasse seus arquivos e armazenasse uma referência para o conjunto de arquivos àquela altura. O Git trata seus dados como um fluxo do estado dos arquivos.
+
+	fig 02 - snapshots
+
+Tudo no Git passa por uma soma de verificações (checksum) antes de ser armazenado e é referenciado por esse checksum. Isto significa que é impossível mudar o conteúdo de qualquer arquivo ou pasta sem que Git saiba. Esta funcionalidade está incorporada no Git nos níveis mais baixos e é parte integrante de sua filosofia.
+
+Os 3 estados
+
+No Git os arquivos podem ter três estados: commited, modificado (modified) e preparado (staged):
+
+	- Commited: significa que os dados estão armazenados de forma segura no banco de dados local;
+	- Modified: o arquivo está alterado, mas o commit não foi realizado;
+	- Staged: a versão atual de um arquivo está marcada para fazer parte do próximo commit.
+	
+	fig 03 - areas
+	
+Vemos na imagem acima três zonas: working directory, staging area e .git directory (repositório). O repositório é onde o Git armazena metadados e o banco de dados de seu projeto. É neste local que ficam os arquivos que são copiados para um computador que trabalha no repositório compartilhado.
+	
+O diretório de trabalho é uma cópia da versão do repositório para um computador, onde se pode trabalhar livremente, acessando ou modificando os arquivos. A área de preparo (Staging area) é um arquivo, normalmente localizado no seu diretório git que armazena as informações que serão aplicadas em seu próximo commit. Também se referenciam a essa área como _índice_.
+
+Como funciona o fluxo de trabalho no Git?
+
+	1. Você modifica os arquivos no seu diretório de trabalho;
+	2. Você prepara os arquivos, adicionando as imagens modificadas à sua área de preparo;
+	3. Ao fazer o commit, os arquivos são transportados da área de trabalho para o .git directory e lá armazenadas permanentemente
+	
+
+Três conceitos são de suma importância para o entendimento do controle de versão, são eles:
+
+	- Ramificação (Branching);
+	- Mesclagem (Merge);
+	- Resolução de Conflitos
+
+

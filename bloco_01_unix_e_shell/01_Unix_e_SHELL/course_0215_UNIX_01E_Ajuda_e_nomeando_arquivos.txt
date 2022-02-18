@@ -1,0 +1,16 @@
+UNIX: Nomenando arquivos e ajuda no terminal
+
+"ls *" lista TODOS os arquivos dentro de um diretório e seus subdiretórios
+
+"ls ?rybe" usamso o ? para buscas com caracteres que não temos certeza ou conhecimento
+
+- NÃO USAR ESPAÇOS EM NOMES DE ARQUIVOS
+- USAR EXTENSÕES DE ARQUIVOS
+
+- comando "man" é utilizado para acessar o mandual de um comando. Por exemplo, "man ls" retorna o manual do comando ls
+
+- comando "whatis" identifica o que faz determinado comando. Por exemplo "whatis cp".
+
+- comando "apropos" é um comando que dá sugestões de comandos para determinada função. É uma espécie de buscas. Por exemplo: "apropos copy" retornará sugestões de comandos que trabalham com cópia de arquivos, pastas, etc.1
+
+
