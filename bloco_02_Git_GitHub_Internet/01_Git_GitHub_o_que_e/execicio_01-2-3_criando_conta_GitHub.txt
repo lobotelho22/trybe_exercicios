@@ -1,0 +1,42 @@
+A criação da conta é um processo passo a passo simples. Após a criação desta, é necessário adicionar uma chave SSH.
+
+- GERANDO A CHAVE SSH
+
+O primeiro passo é digitar o comando abaixo, no terminal, substituindo o nosso email:
+
+	$ ssh-keygen -t rsa -b 4096 -C "seuemail@gmail.com"
+	
+Neste processo aparecerá uma mensagem:
+
+	Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+	
+Aqui, pressionando enter, seguimos com o diretório padrão da instalação, que é dado entre parêntesis. Em caso de querermos um local diferente, temos a opção de informar o caminho.
+
+Então necessitamos criar uma senha, dar enter e depois confirmá-la:
+
+	Enter passphrase (empty for no passphrase): [Type a passphrase]
+	Enter same passphrase again: [Type passphrase again]
+	
+Aqui finaliza o processo de criação da chave SSH. Agora, precisamos adicionar a chave SSH ao ssh-agent.
+
+O primeiro passo é iniciar o ssh-agent em background:
+
+	$ eval "$(ssh-agent -s)"
+	
+Enviamos agora nossa chave privada SSH ao ssh-agent. Se a senha está no diretório padrão, o comando será dado por:
+
+	$ ssh-add ~/.ssh/id_rsa
+	
+No próximo passo, adicionaremos a chave SSH na conta do GitHub. É necessário, em primeiro lugar, precisamos copiar nossa chave SSH. Utilizaremos o comando xclip. Se necessário, instale o xclip pelo código abaixo:
+
+	$ sudo apt-get install xclip
+	
+O xclip realiza a cópia de um conteúdo de um arquivo diretamente do terminal, sem a necessidade de abrir um leitor de documentos na interface gráfica. Para isso, digitamos o comando:
+
+	$ xclip -sel clip < ~/.ssh/id_rsa.pub
+	
+Se quiser testar, após executar o comando, abra um documento de texto e dê o atalho de colar: você verá o conteúdo de sua chave ssh.
+
+Copiada a chave, precisamos entrar no GitHub, acessar as configurações da conta (settings) e buscar a opção SSH and GPG keys. Clicamos em New SSH key ou Add SSH key. Aí preenchemos o campo título, indicado uma descrição da chave, colamos o conteúdo do SSH no campo Key. Para finalizarmos, clicamos em ADD SSH key e confirmamos com nossa senha.
+
+Mais um passo concluído.

@@ -1,0 +1,45 @@
+O seu repositório no GitHub
+
+Criamos um diretório para utilizarmos como um repositório GIT. No presente caso, batizamos o diretório como trybe_exercicios. Acessando essa pasta, inicializaremos o repositório, através do comando
+
+	$ git init
+	
+Criamos um arquivo chamado readme.md, utilizando o comando touch. Esse será o primeiro arquivo a ser commitado em nosso repositório remoto.
+
+Primeiro adicionaremos o arquivo ou o conteúdo da pasta a àrea de preparo (staging area). O comando que realiza essa ação é o "add":
+
+	$ git add .   <= aqui estamos adicionando o conteúdo do diretório atual
+	$ git add readme.md <= aqui estamos adicionando, especificamente o arquivo
+	
+Criamos agora o commit, para fazer preparar o merge do conteúdo que será encaminhado:
+
+	$ git commit -m "esse é o nosso primeiro commit :)"
+	
+Ao fazermos da forma acima, incluímos uma mensagem para identificar o passo que está sendo dado na alteração dos nossos arquivos.
+
+Para configurarmos o último passo, é necessário criarmos em nossa conta do GitHub um repositório público. Feito isso, na opção da aba CODE, temos a opção de copiarmos o link clone SSH. Agora executamos o comando git remote add origin "URL_DO_REPOSITÓRIO", colando o link copiado onde se diz URL_DO_REPOSITÓRIO. No meu caso:
+
+	$ git remote add origin git@github.com:lobotelho22/trybe_exercicios.git
+	
+Feito isso, podemos verificar o status de nosso processo:
+	
+	$ git remote -v
+	
+O retorno esperado é:
+
+	origin	git@github.com:lobotelho22/trybe_exercicios.git (fetch)
+	origin	git@github.com:lobotelho22/trybe_exercicios.git (push)
+	
+Para concluir nossa instalação, digitamos:
+
+	git push -u origin master
+	
+Podendo "master" ser um outro nome (main, por exemplo). Aqui, finalizamos a configuração. Para subir primeiro nosso commit ao repositório do GitHub, digitamos:
+
+	git push origin master 
+	
+Agora verificamos as alterações no GitHub.
+
+O processo é sempre este: ao terminar as alterações de arquivos, subimos a área de preparação, realizamos o commit e, finzalizamos com o push. Então, podemos conferir as alterações no GitHub.
+
+#VqV

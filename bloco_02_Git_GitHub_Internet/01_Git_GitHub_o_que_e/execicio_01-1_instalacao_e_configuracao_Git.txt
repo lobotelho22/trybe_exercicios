@@ -1,0 +1,26 @@
+Iniciamos a instalção do Git com o comando:
+
+	$ sudo apt-get install git-all
+	
+A configuração é feita através do comando git config. O primeiro passo é a configuração de nossa identidade, com nome e endereço de email.
+
+	$ git config --global user.name "Seu nome"
+	$ git config --global user.email seuemail@exemplo.br
+	
+Aqui é necessário utilizar o mesmo email que é ou será utilizado na conta do Gitub.
+
+Agora selecionaremos o VsCode como editor padrão do arquivo de configuração do Git (.gitconfig). Executamos a linha de comando:
+
+	$ git config --global core.editor "code --wait"
+	
+Para abrirmos o .gitconfig no VsCode, executamos o comando:
+
+	$ code .gitconfig
+	
+Podemos agora verificar a versão instalada:
+
+	 $ git --version
+	 
+E também a lista de usuários e emails configurados:
+
+	$ git config --list
