@@ -1,0 +1,18 @@
+Habilitando Two Factor Authentication no seu GitHub
+
+O primeiro passo é baixar um aplicativo TOTP (time-based onde-time password). Esse tipo de programa serve para gerar um token de uso único e validade determinada.
+
+Esse token forma com o pedido da senha já cadastrada, o processo de segurança 2fa (ou autenticação em dois fatores). Recomenda-se o uso dos aplicativos Authy ou Microsoft Authenticator.
+
+Optamos por fazer a instalaçao do Auty, no celular, pela loja do Play.
+	
+Após a instalação, devemos fazer um processo de alterações em nossa conta do GitHub.
+
+	-> Entramos no nas configurações nossa conta (settings);
+	-> Escolhemos a opção Password and authentication;
+	-> clique no botão que diz: "Enable two-factor authentication" ;
+	-> Siga os passos, no aplicativo cadastrando telefone e lendo o QR Code;
+	-> O app retornará um código numérico que deve ser inserido no GitHub;
+	-> salve o arquivo dos códigos de recuperação em um local seguro (com backup), de preferência;
+	
+Agora é só finalizar o processo e tudo está ok.
