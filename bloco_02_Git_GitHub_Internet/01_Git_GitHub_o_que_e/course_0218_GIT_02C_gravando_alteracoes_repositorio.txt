@@ -1,3 +1,39 @@
 GRAVANDO ALTERAÇÕES EM SEU REPOSITÓRIO
 
+Cada arquivo em um repositório pode estar em um dos seguintes estados: rastreado e não-rastreado.
+
+Arquivos rastreados são os que foram incluídos no último *snapshot* ("fotografia"). Estes podem ser não-modificados, modificados ou preparados (adicionados ao staged). Em resumo, são os arquivos reconhecidos pelo Git.
+
+Arquivos não-rastreados são todos os outros, qualquer arquivo no diretório de trabalho que não tenha sido incluído no último *snapshot* e que não estão preparados para o commit.
+
+Quando se clona um repositório, por exemplo, todos os arqiuvos estarão rastreados mas não-modificados, já que oGit acabou de importá-los e não houve alteração.
+
+Assim que se altera um arquivo, O status Git é de arquivo modificado, porque desde o último commit realizado este arquivo está diferente. O próximo passo seria preparar o arquivo e realizar o commit de suas alterações. Esse processo se repetirá inúmeras vezes e é o _metier_ do Git.
+
+VERIFICANDO O STATUS DOS ARQUIVOS
+
+O comando $ git status retorna a situação atual dos arquivos em seu branch. Por exemplo, ao clonar um repositório e aplicando o comando, teríamos:
+
+	$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	nothing to commit, working directory clean
+	
+Isso significa que o diretório de trabalho está 'clean', com nenhuma alteração dos arquivos rastreados. Se houvesse algum arquivo não rastreado, por exemplo, ele estaria listado aqui. 
+
+Imaginando que se crie um arquivo chamado README, que não havia antes no repositório trabalhado, se chamarmos o comando $ git Status, teremos o retorno:
+
+	$ echo 'My Project' > README
+	$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+
+	    README
+
+	nothing added to commit but untracked files present (use "git add" to track)
+	
+Aqui o Git retorna um aviso sobre os _Untracked files_ (arquivos não-rastreados), que significa que o Git percebeu a existência de um arquivo que não estava no *ssnapshot* anterior. O sistema orienta que se prepare o arquivo (add) para fazer o seu commit e atualizar o repositório.
+
 
