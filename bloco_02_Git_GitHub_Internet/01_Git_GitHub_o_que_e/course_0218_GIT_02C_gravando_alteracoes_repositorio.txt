@@ -120,4 +120,47 @@ O retorno será o arquivo e suas modificações em status de preparado para o co
 
 FAZENDO O COMMIT DE SUAS ALTERAÇÕES
 
+A primeira opção é utilizar o comando:
 
+	$ git commit
+	
+Esse comando abre o editor de texto configurado (no nosso caso, o VsCode) para alteração da mensagem identificadora do commit. Uma alternativa é, para digitar uma mensagem curta, direto do terminal, utilizar a opção -m:
+
+	$ git commit 'modificamos o conteúdo do arquivo texto.txt"
+	
+Podemos com o comando commit, também, pular a etapa de marcar um arquivo como staged. Para tal, é necessário utilizar a opção -a:
+
+	$ git -a -m "adicionadas alterações realizadas em 18/02"
+	
+No entanto, essa opção pode se revelar inconveniente por você não controlar exatamente todas as alterações comitadas. Deve ser utilizada prudentemente.
+
+REMOVENDO ARQUIVOS
+
+Para remoção de arquivos, não basta removê-lo da área de stage. É necessário que, através do comando $ git rm [NOME DO ARQUIVO] façamos a eliminação do arquivo. Por exemplo:
+
+	$ rm PROJECTS.md
+	$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.	
+	Changes not staged for commit:
+	  (use "git add/rm <file>..." to update what will be committed)
+	  (use "git checkout -- <file>..." to discard changes in working deleted)
+
+	        directory:    PROJECTS.md
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+	
+
+No exemplo anterio, apesar de termos deletado o arquivo de nossa pasta, a versão que foi colocada no stage continua presente e disponível para ser commitada. Portanto, o necessário é proceder da seguinte forma:
+
+	$ git rm PROJECTS.md	
+	rm 'PROJECTS.md'
+	$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	Changes to be committed:
+	  (use "git reset HEAD <file>..." to unstage)
+	
+	    deleted:    PROJECTS.md
+	    
+A mensagem confirma que o arquivo foi deletado, portanto, se for realizado um commit, o arquivo PROJECTS.md não pertencerá a essa operação.
