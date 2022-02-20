@@ -36,4 +36,88 @@ Imaginando que se crie um arquivo chamado README, que não havia antes no reposi
 	
 Aqui o Git retorna um aviso sobre os _Untracked files_ (arquivos não-rastreados), que significa que o Git percebeu a existência de um arquivo que não estava no *ssnapshot* anterior. O sistema orienta que se prepare o arquivo (add) para fazer o seu commit e atualizar o repositório.
 
+RASTREANDO ARQUIVOS NOVOS
+
+Para rastrear um arquivo novo, ou seja, colocá-lo no status *staged*, utilizamos o comando add:
+
+	$ git add README.md
+	
+Se executarmos o comando $ git status, veremos a seguinte mensagem:
+
+	$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	Changes to be committed:
+	  (use "git reset HEAD <file>..." to unstage)
+
+	    new file:   README
+	   
+Como vemos, podemos utilizar o comando $ git reset HEAD README.me para alterarmos para o estado anterior do arquivo (não-rastreado).
+
+Se, por acaso, incluirmos no stage um arquivo, posteriormente modificando, devemos atualizar o arquivo, fazendo um novo $ git add. Pois, se seguirmos com o commit, a versão commitada será a que estava no stage, ignorando as alterações realizadas posteriormente.
+
+IGNORANDO ARQUIVOS
+
+Com frequência deveremos ignorar alguns arquivos nomeados de alguma forma ou com uma determinada extensão, ou ainda podemos declarar o conteúdo de um diretório como ignorado. Normalmente, o objeto é deixar o repositório mais limpo, ou termos uma área de testes antes de efetuarmos o versionamento do nosso projeto.
+
+Neste caso, devemos criar e editar um arquivo chamado *.gitignore*:
+
+	$ cat .gitignore
+	
+Então devemos editá-lo, para informar ao git o que gostaríamos de ignorar no nosso processo de trabalho. Podemos acessar para editar com um bloco de notas, ou até mesmo no termial, pelo comando cat:
+
+	$ cat > .gignore
+	
+Podemos utilizar neste arquivo o signo # para comentarmos, orientando nossas decisões, por exemplo:
+
+	# ignorar arquivos com extensão .a
+	*.a
+	
+Os padrões de nome de arquivo são como expressões regulares simplificadas usadas em ambiente shell. Um asterisco (*) casa com zero ou mais caracteres; [abc] casa com qualquer caracter dentro dos colchetes (neste caso, a, b ou c); um ponto de interrogação (?) casa com um único caracter qualquer; e caracteres entre colchetes separados por hífen ([0-9]) casam com qualquer caracter entre eles (neste caso, de 0 a 9). Você também pode usar dois asteriscos para criar uma expressão que case com diretórios aninhados; a/**/z casaria com a/z, a/b/z, a/b/c/z, e assim por diante.
+
+Outro exemplo, seria:
+
+	# mas rastrear o arquivo lib.a, mesmo que você esteja ignorando os arquivos .a acima O ! tem sentido de negação
+	!lib.a
+
+	# ignorar o arquivo TODO apenas no diretório atual, mas não em subdir/TODO
+	/TODO
+
+	# ignorar todos os arquivos no diretório build/
+	build/
+	
+VISUALIZANDO ALTERAÇÕES DENTRO E FORA DO STAGE
+
+Uma alternativa ao $ git status, que permite um detalhamento sobre as alterações feitas em um arquivo que está marcado como staged é a seguinte:
+	
+	$ git diff
+
+O comando lista a diferença entre os arquivos em stage e sua versão alterada e não incluída para o commit:
+
+	$ git diff
+	diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+	index 8ebb991..643e24f 100644
+	--- a/CONTRIBUTING.md
+	+++ b/CONTRIBUTING.md
+	@@ -65,7 +65,8 @@ branch directly, things can get messy.
+	 Please include a nice description of your changes when you submit your PR;
+	 if we have to read the whole diff to figure out why you're contributing
+	 in the first place, you're less likely to get feedback and have your change
+	-merged in.
+	+merged in. Also, split your changes into comprehensive chunks if your patch is
+	+longer than a dozen lines.
+
+	 If you are starting to work on a particular area, feel free to submit a PR
+	 that highlights your work in progress (and note in the PR title that it's
+	 
+Perceba que o comando exibe as linhas alteradas no arquivo, sendo portanto um comando útil para avaliar essas alterações realizadas e decidir se um novo stage deve ser realizado.
+
+Se for o caso de ver as alterações já realizadas e que estão no status stage, podemos utilizar o seguinte comando:
+
+	$ git diff --staged
+	
+O retorno será o arquivo e suas modificações em status de preparado para o commit.
+
+FAZENDO O COMMIT DE SUAS ALTERAÇÕES
+
 
