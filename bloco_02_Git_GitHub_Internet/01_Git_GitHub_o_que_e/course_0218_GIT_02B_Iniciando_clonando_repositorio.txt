@@ -1,0 +1,29 @@
+INICIANDO UM REPOSITÓRIO EM UM DIRETÓRIO EXISTENTE
+
+Para iniciar o monitoramento de um projeto com o Git, é necessário acessar pelo terminal a pasta onde se localiza o projeto e, dentro do diretório, realizar o comando:
+
+	$ git init
+	
+Esse comando cria um subdiretório chamado .git onde se localiza todos os arquivos necessários de seu repositório. Para iniciar o trabalho no diretorio recem criado é necessário realizar o commit inicial:
+
+	$ git add *.c
+	$ git add LICENSE
+	$ git commit -m 'versão inicial do projeto'
+	
+A essa altura, temos um repositório monitorado pelo git e com um commit inicial.
+
+CLONANDO UM REPOSITÓRIO EXISTENTE
+
+No caso de o objetivo ser a obtenção de uma cópia de um projeto já existente, precisamos realizar a "clonagem" dessa pasta, obtida com o comando $ git clone.
+
+Cada versão de cada arquivo do histórico do projeto alvo é obtido, por padrão, com este comando. Sua sintaxe é $ git clone [url], que pode ser, por exemplo:
+
+	$ git clone https://github.com/libgit2/libgit2
+	
+Nesse caso, cria-se uma pasta chamada libgit2, indicializando dentro dela uma pasta .git e a cópia dos arquivos do projeto, permitindo sua utilização ou alteração.
+
+No caso de se querer uma pasta diferente do nome atual, especificamos o nome do diretório, como no comando a seguir:
+
+	$ git clone https://github.com/libgit2/libgit2 myLibGit
+
+Nesse caso as cópias dos arquivos do projeto libgit2 seguirão para a pasta nomeada myLibGit. Esse exemplo é baseado no protocolo https:, mas o git pode ser aplicado em protocolo SSH, como vimos nos exercícios que propuseram a utilização do repositório no GitHub.	 

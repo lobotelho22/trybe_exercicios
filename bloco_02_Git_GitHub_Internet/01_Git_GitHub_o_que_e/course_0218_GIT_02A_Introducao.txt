@@ -1,5 +1,7 @@
 Git
 
+// O conteúdo desse texto e dos textos a seguir são baseados no material da trybe e no livro git, disponível em https://git-scm.com/book/pt-br/v2/
+
 É um sistema de controle de versão, que permite trabalho em grupo em um mesmo projeto e apresenta ferramentas capazes de resolver os mais variados problemas que podem surgir nesse processo, relacionado à alterações e versões de arquivos.
 
 Objetivos do bloco:
