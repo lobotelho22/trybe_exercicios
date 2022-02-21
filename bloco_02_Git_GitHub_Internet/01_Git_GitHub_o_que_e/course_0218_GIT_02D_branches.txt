@@ -1,0 +1,54 @@
+BRANCHES
+
+A tradução literal explica bem o conceito: branch significa ramificação e ramificar, neste contexto significa que é possível criar um ramo a partir da linha principal de desenvolvimento de um projeto e trabalhar, com independência, sem comprometer a linha principal.
+
+A principal vantagem do Branch no Git é que, aqui, esse processo é leve e se procede a criação de uma nova ramificação de forma quase instantânea.
+
+CRIANDO UM NOVO BRANCH
+
+Criamos um branch com o comando:
+
+	$ git branch [nome do branch]
+	
+Ao criar um branch novo, o Git não se desloca de imediato para ele. O novo branch "copia" o momento instantâneo do branch master no momento da criação. Chamamos isso de HEAD. Se executarmos o comando abaixo:
+
+	$ git log --oneline --decorate
+	
+Teremos como retorno um resumo dos commits já realizados, as tags aplicadas e a informação de que branch é o HEAD no momento:
+
+	62bab3b (HEAD -> master, tag: v1.0, origin/master) alteracoes GIT_02C
+	c17d768 alteracoes course_0218_GIT_02C_gravando_alteracoes_repositorio.txt
+	85a184a lista de ignorados em .gitignore
+	9176c27 inclusão do arquivo 2C sobre alterações de repositórios no Git
+	68fc585 Update README.md
+
+ALTERNANDO ENTRE BRANCHES
+
+O comando utilizado para alternar entre branches é o $ checkout. Se, por exemplo, temos um branch chamado secondary, podemos acessá-lo da seguinte forma:
+
+	$ git checkout secondary
+
+Ao se fazer o comando $ git log, teremos, como esperado o retorno de que nosso HEAD passou a ser o branch secondary, visto que é a nossa posição atual.
+
+A partir daqui,  todos os trabalhos efetuados e commitados farão parte do histórico desse branch. Comparando o log entre os branches diferentes veremos o histórico de suas diferentes ações. O próximo passo é entender como realizar a mesclagem (Merge) entre esses branches.
+
+Podemos utilizar o comando checkout, que alterna entre branches para no ato também criar um novo branch e já selecioná-lo. Para tal, é necessário utilizar o parâmentro -b:
+
+	$ git checkout -b testMoves
+	
+O comando acima alterna para o branch testMoves, que é criado no mesmo momento em que se dá o comando checkout. Toda vez em que você alterna entre branches você recupera o estado do último commit realizado naquele branch, por isso, em algumas vezes será impossível aternar entre branches sem que as alterações estejam commitadas ou canceladas.
+
+MERGE
+
+Digamos que, trabalhando no branch testMoves você tenha efetuado algumas correções no seu projeto, através de um novo arquivo. Nesse ponto, o branch testMoves estará "um passo" a frente do seu branch master. Para "acertar o passo", ou seja, atualizar o branch master com a correção feita no branch testMoves, será necessário realizar um Merge (uma mesclagem). Efetuamos dessa forma:
+
+	$ git checkout master // aqui retornamos para o branch master
+	$ git merge testMoves // indicamos que vamos mesclar o conteúdo do branch atual o do branch testMoves
+	
+Neste caso, como o branch irá admitir a inclusão de um novo arquivo o sistema indicará que o processo se trata de um merge "fast-foward". Ou seja, é como se adiantasse a posição do branch master na linha do tempo da edição do projeto.
+
+Efetuada a alteração necessária, pode ser do seu interesse eliminar o branch testMoves. Tal processo é feito com o seguinte comando:
+
+	$ git branch -d testMoves
+	
+	
