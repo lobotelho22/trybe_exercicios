@@ -48,7 +48,7 @@ Realizei o **commit** das alterações, marcando como "versão inicial de meu po
 
 Após o **commit**, criei um novo repositório em minha conta github. Utilizei como nome do repositório: [lobotelho22.github.io](https://lobotelho22.github.io).
 
-Tal passo é necessário para criar uma GitHub Page. Para iniciar a troca de arquivos entre meu repositório git local (_master_) e o remoto (_lobotelho22.github.io), realizei o comando:
+Tal passo é necessário para criar uma GitHub Page. Para iniciar a troca de arquivos entre meu repositório git local (_master_) e o remoto (_lobotelho22.github.io_), realizei o comando:
 
 > `git remote add portfolio git@github.com:lobotelho22/lobotelho22.github.io.git`
 
