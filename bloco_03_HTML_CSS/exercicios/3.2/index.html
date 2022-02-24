@@ -3,21 +3,89 @@
   <head>
     <meta charset="UTF-8">
     <title>HTML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet">
     <style>
     
       h1 {
         font-size: 65px;
-        color: orange;
+        font-family: roboto, sans-serif;
+        color: rgb(179, 90, 8);        
+        text-align: center;
+        text-decoration-line: overline;
+        padding: 40px;
+        background-color: #92b0c2;
+      }
+
+      hr {
+        border-top: 40px solid orange;
+      }
+
+      p {
+        font-weight: 100;
+        font-size: 3em;
+        text-decoration-line: overline underline;
+        text-align: center;
       }
 
       ul {
-        background-color: teal;
+        list-style-type: circle;
+        background: teal;
+        
       }
 
       .olive_block {
-        background-color: olive;
+        color: #3d5761;
+        background-color: #FDCA00;
+        padding-bottom: 50px;
+        padding-left: 80px;
+        padding-top: 15px;
       }
-    
+      
+      body {
+        font-family: Roboto, sans-serif;
+        font-weight: 450;
+        font-size: 16px;
+        background-color: #7B878B;
+      }
+
+      .colored-font {
+        color: rgb(13, 46, 77);
+      }
+
+      li {
+        margin: auto;
+        display: inline;
+        padding: 155px;
+        border: 45px;
+      }
+
+      #amarelo {
+        background-color: yellow;
+        position: relative;
+        width: 18%;
+        padding-bottom: 5px;
+        padding-left: 7px;
+        padding-top: 3px;
+      }
+      
+      #vermelho {
+        background-color: red;
+        width: 18%;
+        padding-bottom: 5px;
+        padding-left: 7px;
+        padding-top: 3px;
+      }
+
+      #marrom {
+        background-color: brown;
+        width: 18%;
+        padding-bottom: 5px;
+        padding-left: 7px;
+        padding-top: 3px;
+      }
+
     </style>
   </head>
 
@@ -27,10 +95,10 @@
     
     <p class="olive_block">Qual é a sua cor favorita?</p>
     
-    <ul class="olive_block">
-      <li>Amarelo</li>
-      <li>Vermelho</li>
-      <li>Marrom</li>
+    <ul class="olive_block colored-font">
+      <li id="amarelo">Amarelo</li>
+      <li id="vermelho">Vermelho</li>
+      <li id="marrom">Marrom</li>
     </ul>
 
   </body>

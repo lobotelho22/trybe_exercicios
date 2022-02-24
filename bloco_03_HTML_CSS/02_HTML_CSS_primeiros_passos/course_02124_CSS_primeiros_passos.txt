@@ -55,10 +55,52 @@ Se configuramos na tabela de estilos a classe "blue-and-white", por exemplo, da 
 	<style>
 	
 		.blue-and-white {
-			color = white;
-			background-color = blue;
+			color: white;
+			background-color: blue;
+		}
+		
 	</style>
 	
 Perceba que para nos referirmo a uma classe, na tabela de estilos, chamamos seu nome iniciando por um ponto (.blue-and-white, no nosso exemplo). Dessa forma os três itens marcados com a classe referida apresentarão a mesma configuração. No presente caso, letras brancas sobre um fundo azul.
 
 
+Lição2: ESTILOS PARA TEXTOS
+
+O CSS oferece uma ampla possibilidade para personalização de textos. Podemos iniciar com o exemplo da propriedade *font-family*, que carrega a formatação de uma determinada família de fontes, para identificação do cliente. Digamos que editaremos esse estilo para todos os parágrafos <p> de uma página:
+
+	<style>
+	
+		p {
+			font-family: fantasy;
+		}
+		 
+	</style>
+	
+A opção acima altera todas as fontes dos textos com a tag <p> para a fonte *fantasy*, ou fontes da família desta. Podemos especificar exatamente o uso de uma determinada fonte. Isso, no entanto, só funcionará se a fonte existir no computador do cliente. Para evitarmos esse problema, podemor indicar uma família genérica, separando por vírgulas (como sans-serif, serif, cursive, fantasy, monospace, etc):
+
+	<style>
+		
+		p {
+			font-family: helvetica, sans-serif;
+		}
+	
+	</style>
+	
+Podemos alterar, também, o tamanho da fonte de um determinado texto. Para isso, utilizamos a propriedade *font-size*, que utiliza diversas unidades de medida, como pontos, milímetros, centímetros, etc. Uma unidade curiosa é a designada por em, que é um tamanho relacionado ao tamanho da fonte do body.  Então, imaginado a situação abaixo:
+
+	<style>
+	
+		h2 {
+			font-size: 2em;
+		}
+		
+		body {
+			font-size: 20px;
+		}
+	</style>
+	
+De acordo com as marcações acima, os textos de tag <h2> exibirão suas fontes em tamanho 40px, visto que seu atributo font-size está sinalizado como 2em, que indica o dobro do valor atribuido ao body da página.
+
+Podemos alterar o "peso" da fonte, utilizando font-wheight, para atribuirmos o valor *bold*, para torná-los em negrito. Há ainda opção font-style, que pode exibir determinada tag, id ou classe, em itálico. O espaçamento entre linhas pode ser atribuído através da opção line-height, bem como o alinhamento, através da opção text-align. Por fim, a opção text-decoration pode exibir os caracteres sublinhados. A chave é pesquisar e estudar a fundo o CSS.
+
+CSS ZEN GARDEN >> csszengarden.com
