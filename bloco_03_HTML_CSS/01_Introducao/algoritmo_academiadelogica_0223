@@ -1,0 +1,42 @@
+Academia de Lógica - 23/02
+
+Guardar frutar (são cinco):
+
+-> criar dado <fruta1> guardando um conteudo em formato de texto <banana>
+-> criar dado <fruta2> guardando um conteudo em formato de texto <laranja>
+-> criar dado <fruta3> guardando um conteudo em formato de texto <manga>
+-> criar dado <fruta4> guardando um conteudo em formato de texto <melão>
+-> criar dado <fruta5> guardando um conteudo em formato de texto <maçã>
+
+guardar o preço com e sem promoção
+
+-> criar dado <precoNormal> guardando um conteudo em formato de número <1.99>
+-> criar dado <precoPromo> guardando um conteúdo em formato de núemro <0.99>
+
+guardar a fruta que está em promoção
+
+-> criar dado <fruta5> guardando o conteúdo do dado <frutaPromo>
+
+guardar o preço individual de cada fruta
+
+-> criar dado <preco_fruta> guardando multiplos dados <fruta1>, <fruta2>, <fruta3>, <fruta4>, <fruta5>
+
+guardar 2 caixas contendo frutas sortidas
+
+-> criar dado <caixa1> guardando múltiplos 04 dados aleatórios (função random) entre <fruta1>, <fruta2>, <fruta3>, <<fruta4>, <fruta 5> 
+
+-> criar dado <caixa2> guardando múltiplos 04 dados aleatórios (função random) entre <fruta1>, <fruta2>, <fruta3>, <<fruta4>, <fruta 5> 
+
+
+confirmar que as maçãs estão em promoção
+
+-> Se <frutaPromo> == 'maçã' então confirmar 'Maçã está em promoção'
+
+passar automaticamente fruta por fruta
+a cada passada pela fruta mostrar ela na tela
+
+-> Usar este dado multiplo <caixaN> e fazer uma verificação individual em cada dado dentro dele. 
+	-> se dado da <caixaN> == <frutaPromo> então imprimir na tela <frutaPromo>
+-> fimEstruturaRepticao 
+
+
