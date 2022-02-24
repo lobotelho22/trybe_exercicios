@@ -9,4 +9,56 @@ OBJETIVOS
 
 O CSS é uma ferramenta de estilização de páginas html, amplamente utilizada pela rede, portanto é vital o seu domínio, a quem queira se tornar um Desenvolvedor Web.
 
+Lição 1: Introdução ao CSS
+
+Iniciamos a formatação com CSS, adicionando na <head> de nossa página a tag <style></style>. Tudo o que estiver ali nessa tag será interpretado pelo cliente (navegador) como instruções de formatação do conteúdo da página. Exemplo:
+
+	<style>
+	
+		h2 {
+			color: green;
+		}
+		
+		body {
+			background-color: rgb(255, 100, 200);
+		}
+	
+	</style>
+	
+O exemplo acima faz com que todas informações marcadas pela tag <h2> sejam exibidas em verde. Além disso, para o fundo da página (background-color, em body) a cor será designada pea configuração R-255, G-400, B-200.
+
+Para criar seções "especiais", podemos utilizar o atributo id. Tomemos como exemplo o texto abaixo, marcado por um parágrafo <p>. Se atribuirmos uma id a este parágrafo, podemos nos referir a esta id, para configurarmos o estilo desse parágrafo, na tabela da tag <style>:
+
+	<p id="extinct-specie">
+	
+		Fósseis de um camelo gigante que habitava florestas do Ártico foram encontrados no Canadá. Trinta fragmentos de um osso da perna do animal foram coletados na ilha Ellesmere por pesquisadores do Museu ... 
+	
+	</p>
+	
+Podemos atribuir estilos ao parágrafo acima, através de seu id, como dissemos. Para acessar um id utilizamos sempre um # para sinalizar ao cliente que se trata de um conjunto de estilos para este:
+
+	<style>
+	
+		#extinct-specie {
+			color: gray;
+		}
+	</style>
+	
+Para inserir formatações em grupos maiores de conteúdo, utilizamos o conceito de _classe_. Digamos que a questão seja atribuir uma determinada formatação ao texto de uma lista ordenada, um parágrafo e uma lista não-ordenada. Podemos criar uma classe e marcarmos cada um destes intens como pertencentes a esta:
+
+	<p class="blue-and-white">
+	<ul class="blue-and-white">
+	<ol class="blue-and-white">
+	
+Se configuramos na tabela de estilos a classe "blue-and-white", por exemplo, da seguinte forma:
+
+	<style>
+	
+		.blue-and-white {
+			color = white;
+			background-color = blue;
+	</style>
+	
+Perceba que para nos referirmo a uma classe, na tabela de estilos, chamamos seu nome iniciando por um ponto (.blue-and-white, no nosso exemplo). Dessa forma os três itens marcados com a classe referida apresentarão a mesma configuração. No presente caso, letras brancas sobre um fundo azul.
+
 
