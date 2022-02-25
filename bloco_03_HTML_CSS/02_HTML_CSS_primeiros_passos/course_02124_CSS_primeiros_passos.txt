@@ -9,4 +9,98 @@ OBJETIVOS
 
 O CSS é uma ferramenta de estilização de páginas html, amplamente utilizada pela rede, portanto é vital o seu domínio, a quem queira se tornar um Desenvolvedor Web.
 
+Lição 1: Introdução ao CSS
 
+Iniciamos a formatação com CSS, adicionando na <head> de nossa página a tag <style></style>. Tudo o que estiver ali nessa tag será interpretado pelo cliente (navegador) como instruções de formatação do conteúdo da página. Exemplo:
+
+	<style>
+	
+		h2 {
+			color: green;
+		}
+		
+		body {
+			background-color: rgb(255, 100, 200);
+		}
+	
+	</style>
+	
+O exemplo acima faz com que todas informações marcadas pela tag <h2> sejam exibidas em verde. Além disso, para o fundo da página (background-color, em body) a cor será designada pea configuração R-255, G-400, B-200.
+
+Para criar seções "especiais", podemos utilizar o atributo id. Tomemos como exemplo o texto abaixo, marcado por um parágrafo <p>. Se atribuirmos uma id a este parágrafo, podemos nos referir a esta id, para configurarmos o estilo desse parágrafo, na tabela da tag <style>:
+
+	<p id="extinct-specie">
+	
+		Fósseis de um camelo gigante que habitava florestas do Ártico foram encontrados no Canadá. Trinta fragmentos de um osso da perna do animal foram coletados na ilha Ellesmere por pesquisadores do Museu ... 
+	
+	</p>
+	
+Podemos atribuir estilos ao parágrafo acima, através de seu id, como dissemos. Para acessar um id utilizamos sempre um # para sinalizar ao cliente que se trata de um conjunto de estilos para este:
+
+	<style>
+	
+		#extinct-specie {
+			color: gray;
+		}
+	</style>
+	
+Para inserir formatações em grupos maiores de conteúdo, utilizamos o conceito de _classe_. Digamos que a questão seja atribuir uma determinada formatação ao texto de uma lista ordenada, um parágrafo e uma lista não-ordenada. Podemos criar uma classe e marcarmos cada um destes intens como pertencentes a esta:
+
+	<p class="blue-and-white">
+	<ul class="blue-and-white">
+	<ol class="blue-and-white">
+	
+Se configuramos na tabela de estilos a classe "blue-and-white", por exemplo, da seguinte forma:
+
+	<style>
+	
+		.blue-and-white {
+			color: white;
+			background-color: blue;
+		}
+		
+	</style>
+	
+Perceba que para nos referirmo a uma classe, na tabela de estilos, chamamos seu nome iniciando por um ponto (.blue-and-white, no nosso exemplo). Dessa forma os três itens marcados com a classe referida apresentarão a mesma configuração. No presente caso, letras brancas sobre um fundo azul.
+
+
+Lição2: ESTILOS PARA TEXTOS
+
+O CSS oferece uma ampla possibilidade para personalização de textos. Podemos iniciar com o exemplo da propriedade *font-family*, que carrega a formatação de uma determinada família de fontes, para identificação do cliente. Digamos que editaremos esse estilo para todos os parágrafos <p> de uma página:
+
+	<style>
+	
+		p {
+			font-family: fantasy;
+		}
+		 
+	</style>
+	
+A opção acima altera todas as fontes dos textos com a tag <p> para a fonte *fantasy*, ou fontes da família desta. Podemos especificar exatamente o uso de uma determinada fonte. Isso, no entanto, só funcionará se a fonte existir no computador do cliente. Para evitarmos esse problema, podemor indicar uma família genérica, separando por vírgulas (como sans-serif, serif, cursive, fantasy, monospace, etc):
+
+	<style>
+		
+		p {
+			font-family: helvetica, sans-serif;
+		}
+	
+	</style>
+	
+Podemos alterar, também, o tamanho da fonte de um determinado texto. Para isso, utilizamos a propriedade *font-size*, que utiliza diversas unidades de medida, como pontos, milímetros, centímetros, etc. Uma unidade curiosa é a designada por em, que é um tamanho relacionado ao tamanho da fonte do body.  Então, imaginado a situação abaixo:
+
+	<style>
+	
+		h2 {
+			font-size: 2em;
+		}
+		
+		body {
+			font-size: 20px;
+		}
+	</style>
+	
+De acordo com as marcações acima, os textos de tag <h2> exibirão suas fontes em tamanho 40px, visto que seu atributo font-size está sinalizado como 2em, que indica o dobro do valor atribuido ao body da página.
+
+Podemos alterar o "peso" da fonte, utilizando font-wheight, para atribuirmos o valor *bold*, para torná-los em negrito. Há ainda opção font-style, que pode exibir determinada tag, id ou classe, em itálico. O espaçamento entre linhas pode ser atribuído através da opção line-height, bem como o alinhamento, através da opção text-align. Por fim, a opção text-decoration pode exibir os caracteres sublinhados. A chave é pesquisar e estudar a fundo o CSS.
+
+CSS ZEN GARDEN >> csszengarden.com
