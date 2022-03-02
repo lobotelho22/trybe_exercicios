@@ -1,0 +1,47 @@
+div {
+    width: 200px;
+    /*height: 40px;*/
+    display: inline-block;    
+}
+
+div:hover {
+    border-style: dotted;
+    width:200px;
+    /*height: 40px;*/
+ 
+}
+
+#cor-primaria {
+    background-color: blueviolet;
+}
+
+#cor-secundaria {
+    background-color: rgb(43, 226, 195);
+}
+
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.cor-complementar {
+    background-color:rgb(223, 226, 43);
+}
+
+#cor-escura {
+    background-color: rgb(37, 4, 68);
+}
+
+#cor-clara {
+    background-color: rgb(219, 182, 253);
+}
+
+.h3_impar {
+    font-style: italic;
+}
+
+.caixa-maior {
+    height: 350px;
+    width: 200px
+}
