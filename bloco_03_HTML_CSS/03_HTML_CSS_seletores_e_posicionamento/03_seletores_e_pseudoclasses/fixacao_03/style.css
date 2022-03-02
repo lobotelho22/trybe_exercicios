@@ -1,0 +1,61 @@
+ol {
+    background-color: yellow;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+.par {
+    color: darkgreen;
+}
+
+.impar {
+    text-transform: uppercase;
+}
+
+ul.ling-prog li.select {
+    background-color: lightblue;
+}
+
+li.select#java{
+    background-color: pink;
+}
+
+ul.maiores-aliados li:hover {
+    font-weight: bold;
+    
+}
+
+a.stack:hover {
+    color:orange;
+}
+
+a.w3:hover{
+    color: green;
+}
+
+a.mdn:hover {
+    color: black;
+}
+
+a.devdocs:hover {
+    color: gold;
+}
+
+a.trybe:hover {
+    color: #2FC18C;
+}
+
+h1, h2, h3, h4 {
+    color: red;
+}
+
+h1, h2, h3 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
