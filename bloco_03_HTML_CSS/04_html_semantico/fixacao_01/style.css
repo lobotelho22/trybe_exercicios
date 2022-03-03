@@ -10,7 +10,7 @@ ul {
     text-align: center;
 }
 
-ul li {
+ul > li {
     display: inline;
 }
 
