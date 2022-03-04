@@ -1,3 +1,48 @@
 * {
     margin: 0;
 }
+
+body {
+    background-color: #03B3E8;
+}
+
+header {
+    background-color: #FDDD56;
+    position: fixed;
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Itim', cursive;
+    font-weight: 100;
+}
+
+header h1 {
+    color: #1c8128;
+    font-family: 'Itim', cursive;
+    font-weight: 100;
+    text-align: center;
+    padding: 10px;
+    /* max-width: 80%; */
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    background-color: #FF862E;
+    padding: 150px 50px;
+    /* text-align: center; */
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+img {
+    max-width: 60%;
+    margin: 18px;
+}
