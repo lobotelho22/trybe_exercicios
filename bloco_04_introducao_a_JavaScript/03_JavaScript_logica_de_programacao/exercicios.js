@@ -73,7 +73,6 @@ for (let x = 1; x <= numLinhas; x++) {
 
 //4- Depois, faça uma pirâmide com n asteriscos de base:
 
-
 // <-- Declaração das nossas variáveis -->
 
 /* let numLinhas = 15;       // Aqui entra a quantidade de linhas da pirâmide
@@ -101,4 +100,3 @@ for (j = numLinhas; j > 0; j -= 2) {    // laço para gerar as linhas da pirâmi
     linhaImpressa = "";             // limpa a linha para reescrever
     numAsterisco += 2;              // progride a contagem de asteriscos por linha
 } */
-
