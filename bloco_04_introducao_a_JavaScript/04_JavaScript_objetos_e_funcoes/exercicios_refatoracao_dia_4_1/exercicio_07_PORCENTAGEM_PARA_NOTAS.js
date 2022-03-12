@@ -8,28 +8,30 @@
     Porcentagem < 50 -> F
     O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.  */
 
-let nota = 30;
-
-if (nota > 100) {
-  console.log("Digite uma nota válida (entre 0 e 100).");
-} else if (nota >= 90) {
-  nota = "A";
-  console.log("sua nota foi ", nota);
-} else if (nota >= 80) {
-  nota = "B";
-  console.log("sua nota foi ", nota);
-} else if (nota >= 70) {
-  nota = "C";
-  console.log("sua nota foi ", nota);
-} else if (nota >= 60) {
-  nota = "D";
-  console.log("sua nota foi ", nota);
-} else if (nota >= 50) {
-  nota = "E";
-  console.log("sua nota foi ", nota);
-} else if (nota < 50) {
-  nota = "F";
-  console.log("sua nota foi ", nota);
-} else {
-  console.log("Digite uma nota válida (entre 0 e 100).");
+function gradeToConcept (nota) {
+  if (nota > 100) {
+    return "Digite uma nota válida (entre 0 e 100).";
+  } else if (nota >= 90) {
+    nota = "A";
+    return"sua nota foi ", nota;
+  } else if (nota >= 80) {
+    nota = "B";
+    return "sua nota foi ", nota;
+  } else if (nota >= 70) {
+    nota = "C";
+    return "sua nota foi ", nota;
+  } else if (nota >= 60) {
+    nota = "D";
+    return "sua nota foi ", nota;
+  } else if (nota >= 50) {
+    nota = "E";
+    return "sua nota foi ", nota;
+  } else if (nota < 50) {
+    nota = "F";
+    return "sua nota foi ", nota;
+  } else {
+    return "Digite uma nota válida (entre 0 e 100).";
+  }  
 }
+
+console.log(gradeToConcept(30));
