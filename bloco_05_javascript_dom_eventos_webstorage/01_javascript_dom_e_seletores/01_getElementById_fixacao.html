@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="textoCorrido">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="textoCorrido">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.querySelector("#paragraph");
+      paragraph.style.color = "red";
+
+      const mainTitle = document.querySelector("#page-title");
+      mainTitle.innerHTML = '<h1 id="page-title">Apocalypse Now</h1>';
+
+      const secondParagraph = document.querySelectorAll("p")[1];
+      secondParagraph.style.textAlign = "right";
+      secondParagraph.style.backgroundColor = "lightgrey";
+      secondParagraph.style.color = "darkblue";
+      secondParagraph.style.padding = "40px";
+      secondParagraph.innerText = "É um filme baseado em uma incrível obra literária, de Joseph Conrad, chamada Heart of the Darkness"
+
+      const subtitle = document.querySelectorAll("#subtitle")[0];
+      subtitle.innerHTML = '<h2>Estrelando Martin Sheen</h2>'
+
+      /* const textoCorrido = document.querySelectorAll("textoCorrido")[0];
+        console.log(textoCorrido[0]); */
+
+      const subtitle2 = document.querySelector("h4");
+        subtitle2.style.color = "darkcyan";
+
+    </script>
+  </body>
+</html>
