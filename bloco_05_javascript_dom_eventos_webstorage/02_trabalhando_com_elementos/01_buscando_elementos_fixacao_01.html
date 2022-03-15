@@ -1,0 +1,111 @@
+<!-- arquivo index.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+  Copiar
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+</body>
+
+<script>
+  console.log(document.querySelector("#elementoOndeVoceEsta"));
+
+  //Fixação 02
+  
+  const alteraCor2 = document.querySelector("#elementoOndeVoceEsta").parentNode;
+  alteraCor2.style.color = "blue";
+  
+  const incluiTexto = document.querySelector("#primeiroFilhoDoFilho");
+  incluiTexto.innerHTML = "Ela disse-me assim: tenha pena de mim, vá embora!";
+  
+  console.log(document.querySelector("#pai"));
+  console.log(document.querySelector("#pai").firstElementChild);
+
+  console.log(document.querySelector("#elementoOndeVoceEsta"));
+  console.log(document.querySelector("#elementoOndeVoceEsta").previousElementSibling);
+
+  console.log(document.querySelector("#elementoOndeVoceEsta"));
+  console.log(document.querySelector("#elementoOndeVoceEsta").nextSibling);
+
+  console.log(document.querySelector("#elementoOndeVoceEsta"));
+  console.log(document.querySelector("#elementoOndeVoceEsta").nextElementSibling);
+
+  console.log(document.querySelector("#pai"));
+  console.log(document.querySelector("#pai").lastElementChild.previousElementSibling);
+
+  // Fixação 03 - Incluindo elementos
+
+  // Crie um irmão para elementoOndeVoceEsta
+
+  const nodeParent = document.querySelector('#elementoOndeVoceEsta').parentElement; //seleciona elemento pai
+  const node = document.createElement("h3"); //cria um elemento node H3
+  node.innerText = "Nós somos campeões"; //insere o texto em node 
+  nodeParent.appendChild(node); // coloca node como filha de nodeParent
+  console.log(node.parentElement); // exibe o elemento pai de node: nodeParent = "pai"
+
+  // Crie um filho para elementoOndeVoceEsta
+
+  const filhoOnde = document.createElement ("p");
+  
+  filhoOnde.innerText = 'Padre José de Anchieta, missionário da Companhia de Jesus, também conhecido como o apóstolo do Brasil, foi assim distinto pelo fato de ter participado do início da catequização em terras brasileiras. José de Anchieta foi beatificado em 1980 e canonizado em 2014.';
+  
+  const nodeOnde = document.querySelector('#elementoOndeVoceEsta');
+
+  nodeOnde.appendChild(filhoOnde);
+
+  // Crie um filho para primeiroFilhoDoFilho
+
+  const primeiroFilhoDoFilho = document.querySelector("#primeiroFilhoDoFilho");
+  const filhoDoPrimeiroFilho = document.createElement("p");
+  filhoDoPrimeiroFilho.innerText = "as coisas que fazem a amizade ser o que é: fazer gentilezas, fazê-las sem ser convidado, e não proclamar o fato de tê-las feito";
+  
+  primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilho);
+
+  console.log(filhoDoPrimeiroFilho.parentElement);
+
+  // A partir desse filho criado, acesse terceiroFilho
+
+  console.log(filhoDoPrimeiroFilho.parentElement.parentElement.nextElementSibling);
+
+  // Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+
+    const fatherElement = document.querySelector("#pai");
+    
+    function elementForDelete(classe) {
+      let deleteThisElement = document.querySelector(classe);
+      return deleteThisElement;
+    }
+    
+    function removeElement(father, element) {
+      father.removeChild(element);  
+    }
+    
+    removeElement(fatherElement, elementForDelete('#quartoEUltimoFilho'));
+    removeElement(fatherElement, elementForDelete('#terceiroFilho'));
+    removeElement(fatherElement, elementForDelete('#pai h3'));
+    
+    fatherElement.lastChild.remove();
+    
+    //fatherElement.removeChild(elementText);
+    //console.log(elementText);
+    console.log(fatherElement);
+
+</script>
+</html>
