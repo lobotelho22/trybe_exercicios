@@ -84,3 +84,69 @@ function createHolidayBtn(feriado) {
 }
 
 createHolidayBtn("Feriados");
+
+//? Exercicio 3:
+//? Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday"
+//? É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor rgb(238,238,238)
+
+function colorHoliday() {
+  let hDays = document.querySelectorAll(".holiday");
+
+  for (i = 0; i < hDays.length; i += 1) {
+    let testeCor = hDays[i].style.backgroundColor;
+
+    if (testeCor == "rgb(59, 191, 43)") {
+      hDays[i].removeAttribute('style');
+    }
+
+    if (testeCor != "rgb(59, 191, 43)") {
+      hDays[i].style.backgroundColor = "#3bbf2b";
+    }
+  }
+}
+
+let btnHoliday = document.getElementById("btn-holiday");
+btnHoliday.addEventListener("click", colorHoliday);
+
+//? Exercicio 4 - Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+//? Adicione a este botão o ID "btn-friday" .
+//? Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+function createFridayBtn (sexta){
+  let btnFriday = document.createElement('button');
+  btnFriday.id = 'btn-friday';
+  btnFriday.name = sexta;
+  btnFriday.innerText = sexta;
+  
+  let divSexta = document.querySelector('.buttons-container');
+  divSexta.appendChild(btnFriday);
+} 
+
+createFridayBtn('Sexta-feira');
+
+//? Exercício 5:
+//? Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+//? É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+function alteraSexta() {
+  let listFridays = document.querySelectorAll(".friday");
+
+  for (i = 0; i < listFridays.length; i += 1) {
+    
+    let testFriday = listFridays[i].innerText;
+
+    if (testFriday == "sextou!") {
+      let fridays = [4, 11, 18, 25];
+      listFridays[i].innerText = fridays[i];
+      listFridays[i].removeAttribute('style');
+    }
+
+    if (testFriday != "sextou!") {
+      listFridays[i].innerText = 'sextou!';
+      listFridays[i].style.color = '#b64fb7';
+    }
+  }
+}
+
+let btnFriday = document.getElementById("btn-friday");
+btnFriday.addEventListener("click", alteraSexta);
