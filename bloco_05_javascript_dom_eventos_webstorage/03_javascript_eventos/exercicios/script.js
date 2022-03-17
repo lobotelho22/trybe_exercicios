@@ -155,12 +155,13 @@ btnFriday.addEventListener("click", alteraSexta);
 
 function zoomNumber(event) {
   event.target.style.fontSize = "1.6em";
-  event.target.style.border = "1px solid red";
-  event.target.style.borderRadius = "100%";
+  // event.target.style.border = "1px solid red";
+  // event.target.style.borderRadius = "100%";
 }
 
 function zoomOutNumber(event) {
-  event.target.removeAttribute("style");
+  //event.target.removeAttribute("style");
+  event.target.style.fontSize = "20px";
 }
 
 let dayOfMonth = document.querySelectorAll(".days-container ul .day");
@@ -220,3 +221,29 @@ function changeTaskColor() {
 }
 
 task.addEventListener("click", changeTaskColor);
+
+//? Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+//? Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119)
+
+function changeDayColor(event) {
+  //console.log('foda-se o presidente');
+  let taskColor = document.querySelector(".task").style.backgroundColor;
+  let dayTask = event.target;
+
+  if (dayTask.style.backgroundColor != taskColor) {
+    dayTask.style.backgroundColor = taskColor;
+  } else if (dayTask.style.backgroundColor == taskColor) {
+    dayTask.style.backgroundColor = "#EEEEEE";
+  }
+}
+
+//? Bônus:
+//todo  Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+//todo Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+//todo Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+//? Dica - Propriedade: key .
+
+
+for (let littleDay of dayOfMonth) {
+  littleDay.addEventListener("click", changeDayColor);
+}
