@@ -96,7 +96,7 @@ function colorHoliday() {
     let testeCor = hDays[i].style.backgroundColor;
 
     if (testeCor == "rgb(59, 191, 43)") {
-      hDays[i].removeAttribute('style');
+      hDays[i].removeAttribute("style");
     }
 
     if (testeCor != "rgb(59, 191, 43)") {
@@ -112,17 +112,17 @@ btnHoliday.addEventListener("click", colorHoliday);
 //? Adicione a este botão o ID "btn-friday" .
 //? Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-function createFridayBtn (sexta){
-  let btnFriday = document.createElement('button');
-  btnFriday.id = 'btn-friday';
+function createFridayBtn(sexta) {
+  let btnFriday = document.createElement("button");
+  btnFriday.id = "btn-friday";
   btnFriday.name = sexta;
   btnFriday.innerText = sexta;
-  
-  let divSexta = document.querySelector('.buttons-container');
-  divSexta.appendChild(btnFriday);
-} 
 
-createFridayBtn('Sexta-feira');
+  let divSexta = document.querySelector(".buttons-container");
+  divSexta.appendChild(btnFriday);
+}
+
+createFridayBtn("Sexta-feira");
 
 //? Exercício 5:
 //? Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
@@ -132,21 +132,43 @@ function alteraSexta() {
   let listFridays = document.querySelectorAll(".friday");
 
   for (i = 0; i < listFridays.length; i += 1) {
-    
     let testFriday = listFridays[i].innerText;
 
     if (testFriday == "sextou!") {
       let fridays = [4, 11, 18, 25];
       listFridays[i].innerText = fridays[i];
-      listFridays[i].removeAttribute('style');
+      listFridays[i].removeAttribute("style");
     }
 
     if (testFriday != "sextou!") {
-      listFridays[i].innerText = 'sextou!';
-      listFridays[i].style.color = '#b64fb7';
+      listFridays[i].innerText = "sextou!";
+      listFridays[i].style.color = "#b64fb7";
     }
   }
 }
 
 let btnFriday = document.getElementById("btn-friday");
 btnFriday.addEventListener("click", alteraSexta);
+
+//? Exercício 6:
+//? Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+
+function zoomNumber(event) {
+  event.target.style.fontSize = "1.6em";
+  event.target.style.border = "1px solid red";
+  event.target.style.borderRadius = "100%";
+}
+
+function zoomOutNumber(event) {
+  event.target.removeAttribute('style');
+}
+
+let dayOfMonth = document.getElementsByClassName("day");
+
+for (j = 0; j < dayOfMonth.length; j += 1) {
+  dayOfMonth[j].addEventListener("mouseover", zoomNumber);
+}
+
+for (j = 0; j < dayOfMonth.length; j += 1) {
+  dayOfMonth[j].addEventListener("mouseleave", zoomOutNumber);
+}
