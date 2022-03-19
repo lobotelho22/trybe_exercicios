@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'The Godfather Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('The Godfather Regular'), url('TheGodfather-v2.woff') format('woff');
+    }
+
+body {
+    background-color: black;
+    color: #DDD;
+}
+
+nav {
+    margin: auto;
+    text-align:center;
+    font-size: 0.9em;;
+    font-weight: 500;
+}
+
+.button-box {
+    border: 2px solid #AAA;
+    background-color: #888;
+    border-radius: 6px;
+    height: 30px;
+    width: fit-content;
+    padding: 0px 10px;
+    margin: 0px auto 5px auto;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    padding-top: 10px;
+    color: #333;
+}
+
+.button-color {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#plus {
+    background-color: #555;
+    color: #222;
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding-right: 2px;
+    padding-top: 2px;
+}
+
+#minus {
+    background-color: #555;
+    color: #222;
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding-bottom: 1px;
+}
+
+#black {
+    background-color: black;
+}
+
+#grey {
+    background-color: #555;
+}
+
+#white {
+    background-color:#EEE;
+}
+
+header {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    /* border: solid 1px white; */
+    padding: 30px;
+    
+}
+
+h1, #title {
+    color: red;
+    font-family: 'The Godfather Regular';
+    font-weight: 100;
+    font-size: 4em;
+    letter-spacing: 0.12em;
+    display: block;
+}
+
+h2 {
+    color: red;
+    font-family: 'The Godfather Regular';
+    font-weight: 100;
+    font-size: 2.8em;
+    letter-spacing: 0.15em;
+    text-align: center;
+    max-width:max-content;
+    /* border: solid green 1px; */
+    padding: 10px;
+    margin: 0px auto 12px auto;
+}
+
+main {
+    margin: 0.5% auto;
+    max-width: 80%;
+    padding: 30px;
+    /* border: solid 1px blue; */
+}
+
+p {
+    margin-bottom: 25px;
+    text-indent: 3em;
+    line-height: 1.6em;
+    font-size: 1em;
+}
+
+ul {
+    /* border: 1px solid yellow; */
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+   
+}
+
+li {
+    max-width: 25%;
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: #DDD;
+    padding: 25px;
+    border-radius: 11px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
+    color: #222;
+}
