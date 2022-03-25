@@ -237,6 +237,10 @@ function changeDayColor(event) {
   }
 }
 
+for (let littleDay of dayOfMonth) {
+  littleDay.addEventListener("click", changeDayColor);
+}
+
 //? Bônus:
 //todo  Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
 //todo Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
@@ -244,6 +248,3 @@ function changeDayColor(event) {
 //? Dica - Propriedade: key .
 
 
-for (let littleDay of dayOfMonth) {
-  littleDay.addEventListener("click", changeDayColor);
-}
