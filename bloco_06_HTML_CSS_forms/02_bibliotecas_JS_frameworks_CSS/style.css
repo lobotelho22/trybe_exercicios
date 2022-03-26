@@ -1,0 +1,11 @@
+#title {
+    text-align: center;
+    margin: 20px auto 40px;
+    color: rgb(47, 193, 140);
+}
+
+#box {
+    border-top: solid 4px rgb(255, 56, 96);
+    padding-top: 15px;
+    padding-bottom: 55px;
+}

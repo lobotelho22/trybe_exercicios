@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b7de01fbd.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="bulma/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-full is-centered">
+                    <p class="bd-notification is-primary">
+                    <h1 class="title is-1" id='title'>Trybe Trip</h1>
+                    </p>
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class='columns is-four-fifths is-centered' id="box">
+            <form action="" method="get" autocomplete="on">
+                <div class="field is-vcentered">
+                    <label class="label" for="name">Nome:<input class='input is-success' type="text" name='nome'
+                            required placeholder="Insira seu nome" id="name">
+                    </label>
+                </div>
+
+                <div class="field">
+                    <p class='control has-icons-left has-icons-left'>
+                        <input class="input is-info" type="email" name='email' required placeholder="Insira seu email"
+                            id="email">
+                        <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        </label>
+                    </p>
+                </div>
+
+
+                <div class="field">
+                    <div class="control">
+                        <label class="radio" for="opcao-1"><input type="radio" name="options-to-choose" id='opcao-1'
+                                checked> Opção 1 </label>
+
+                        <label class="radio" for="opcao-2"><input type="radio" name="options-to-choose" id='opcao-2'>
+                            Opção
+                            2 </label>
+
+                        <label class="radio" for="opcao-3"><input type="radio" name="options-to-choose" id='opcao-3'>
+                            Opção
+                            3 </label>
+
+                        <label class="radio" for="opcao-4"><input type="radio" name="options-to-choose" id='opcao-4'>
+                            Opção
+                            4 </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class='label' for="answer">Espaço para digitar sua resposta:<br>
+
+                            <textarea class="textarea is-small is-primary" name="resposta" id="answer" cols="40"
+                                rows="15" required placeholder="Digite sua resposta"
+                                style="resize: none"></textarea></label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="label" for="data-viagem">Data: <input type="date" id='data-viagem' required>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="field">
+                    <p class="control">
+                        <label class='checkbox'' for="concordo-1">Concordo 1 <input type="checkbox" id="concordo-1" required></label>
+            </p>
+                       
+            <p class="control">
+            <label for="concordo-2">Concordo 2 <input type="checkbox" id="concordo-2" required></label>         
+            </p>            
+            </div>
+
+            <input type="submit" class="button is-primary is-large" id="enviar" value="Enviar">
+
+            <input type="reset" class="button is-warning is-large" id="apagar" value="Apagar">
+        </div>
+        </form>
+    </main>
+</body>
+
+</html>
