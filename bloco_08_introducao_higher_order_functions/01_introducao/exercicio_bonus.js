@@ -68,9 +68,15 @@ const gameActions = {
         warrior.damage = warriorAttack(warriorStrg, warriorWeapon);
         dragon.healthPoints -= warrior.damage;
     },
-
+    mageTurn: (mageAttack, mageintelligence, mageMana) => {
+        const mageRound = mageAttack(mageintelligence, mageMana);
+        mage.damage = mageRound.damage;
+        mage.mana -= mageRound.wastedMana;
+        dragon.healthPoints -= mage.damage;
+    }
   };
 
 // 1 - Crie a primeira HOF que compõe o objeto gameActions . Ela será a função que simula o turno do personagem warrior . Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem warrior e atualizará os healthPoints do monstro dragon . Além disto ela também deve atualizar o valor da chave damage do warrior .
 
-console.log(gameActions.warriorTurn);
+// 2 - Crie a segunda HOF que compõe o objeto gameActions . Ela será a função que simula o turno do personagem mage . Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem mage e atualizará os healthPoints do monstro dragon . Além disto ela também deve atualizar o valor das chaves damage e mana do mage.
+
