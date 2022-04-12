@@ -65,10 +65,13 @@ const books = [
 
 const expectedResult = 43;
 
+function somaIdades(total, book) {
+    return total + (book.releaseYear - book.author.birthYear);
+    };
+
 function averageAge(array) {
-  const idades = array.map((book) => book.releaseYear - book.author.birthYear);
-  const totalIdades = idades.reduce((acc, idade) => acc += idade);
-  const mediaIdades = totalIdades / idades.length;
+  const idades = array.reduce((somaIdades),0);
+  const mediaIdades = idades / array.length;
   return mediaIdades;
 }
 
