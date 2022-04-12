@@ -62,15 +62,14 @@ const books = [
 ];
 
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
+let getStringName = (acc, book, i, array) => {
+  if (i < array.length) {
+    return (acc += `${book.author.name}, `);
+  }
+};
 
 function reduceNames(acc, book, i, array) {
-  let getStringName = () => {
-    if (i < array.length) {
-      return (acc += `${book.author.name}, `);
-    }
-  };
-
-  let stringName = getStringName();
+  let stringName = getStringName(acc, book, i, array);
   return stringName;
 }
 
@@ -80,6 +79,4 @@ function colocarPontoFinal (stringName) {
   return stringName;
 }
 
-let stringName = books.reduce(reduceNames, "")
-
-console.log(colocarPontoFinal(stringName));
+console.log(colocarPontoFinal(books.reduce(reduceNames, "")));
