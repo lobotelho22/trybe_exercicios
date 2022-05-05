@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.hello-world {
+  color: darkblue;
+  text-decoration: 4px;
+}
+
+.welcome-abestado {
+  text-align: center;
+  color: darkolivegreen;
+  padding: 6%;
+  margin-top: 40px;
+  background-color: rgb(228, 186, 82);
+}
