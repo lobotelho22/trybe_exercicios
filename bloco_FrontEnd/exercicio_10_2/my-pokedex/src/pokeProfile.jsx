@@ -3,10 +3,7 @@ import pokemons from "./data"
 
 
 class PokeProfile extends React.Component {
-    render () {
-
-        
-        
+       render () {
         const pokeUnique = pokemons.map((pokemon) => {
             const { name, type, averageWeight, image: urlImage } = pokemon
             const altText = `uma imagem do pokemon chamado ${name}`
