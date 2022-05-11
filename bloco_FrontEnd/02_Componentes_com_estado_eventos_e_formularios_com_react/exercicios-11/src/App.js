@@ -7,9 +7,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Comecemos os Jogos</h1>
-        <CreateButton />
-        <CreateButton />
-        <CreateButton />
+      
       </div>
     );
   }
