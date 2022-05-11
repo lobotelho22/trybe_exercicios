@@ -14,7 +14,7 @@ class CreateButton extends React.Component {
     handleClick = () => {
         this.setState((prevState) => ({
             numberOfClicks: prevState.numberOfClicks + 1
-        }))
+        }), () => { console.log(this.state.color)})
         
         const testEven = this.state.numberOfClicks +1;
         if (testEven % 2 !== 0) {
@@ -28,6 +28,8 @@ class CreateButton extends React.Component {
                 color: "red"
             }))
         }
+
+        
     }
 
     render () {
