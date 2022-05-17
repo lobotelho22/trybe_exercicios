@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import CreateButton from './createButton';
+import CreateForm from './CreateForm';
 
 class App extends React.Component {
+
   render () {
     return (
       <div>
-        <h1>Comecemos os Jogos</h1>
-      
+       <CreateForm />
       </div>
     );
-  }
+    }
 }
 
 export default App;
