@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
         Email
         <input id="id-email" type="email" />
       </label>
+      <input id="btn-send" type="button" value="Enviar" />
     </div>
   );
 }
