@@ -5,4 +5,5 @@ test('renders learn react link', () => {
   render(<App />);
   const emailFormEl = screen.getByLabelText(/email/i);
   expect(emailFormEl).toBeInTheDocument();
+  expect(emailFormEl).toHaveProperty('type', 'email');
 });
