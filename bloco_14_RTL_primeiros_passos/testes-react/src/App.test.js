@@ -11,6 +11,6 @@ test('está renderizando na tela um campo de emmail?', () => {
 it('está aparecendo um botão na tela?', () => {
   render(<App />);
   const btnEl = screen.getAllByRole('button');
-  //console.log(btnEl[1].value);
-  expect(btnEl[1].value).toHaveLength(2);
+  // console.log(btnEl[1].value);
+  expect(btnEl[1].value).toBe("voltar");
 })
