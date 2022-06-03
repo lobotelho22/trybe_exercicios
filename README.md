@@ -38,83 +38,83 @@ O programa tem mais de 1.500 horas de aulas presenciais e online, e apresenta a 
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
-- [x ] 5-1: _JavaScript - DOM e seletores_
-- [ x] 5-2: _JavaScript - Trabalhando com itens_
-- [ ] 5-3: _JavaScript - Eventos_
-- [ ] 5-4: _JavaScript - Armazenamento na Web_
-- [ ] 5-5: _ [Projeto - Gerador de Memes] () _
-- [ ] 5-6: _ [Projeto - Pixel Art] () _
-- [ ] 5-7: _ [Projeto - Lista de tarefas] () _
-- [ ] 5-7: _ [Projeto - Adivinhe a Cor] () _
-- [ ] 5-7: _ [Projeto - Carta Misteriosa] () _
+- [x] 5-1: _JavaScript - DOM e seletores_
+- [x] 5-2: _JavaScript - Trabalhando com itens_
+- [x] 5-3: _JavaScript - Eventos_
+- [x] 5-4: _JavaScript - Armazenamento na Web_
+- [x] 5-5: _ [Projeto - Gerador de Memes] () _
+- [x] 5-6: _ [Projeto - Pixel Art] () _
+- [x] 5-7: _ [Projeto - Lista de tarefas] () _
+- [x] 5-7: _ [Projeto - Adivinhe a Cor] () _
+- [x] 5-7: _ [Projeto - Carta Misteriosa] () _
 
 ##### Bloco 6: HTML e CSS avançados
 
-- [ ] 6-1: _HTML e CSS - Formulários_
-- [ ] 6-2: _Bibliotecas Javascript e Estruturas CSS_
-- [ ] 6-3: _CSS Flexbox - Parte 1_
-- [ ] 6-4: _CSS Flexbox - Parte 2_
-- [ ] 6-5: _CSS responsivo - Mobile First_
-- [ ] 6-6: _ [Projeto - página inicial do Facebook] () _
+- [x] 6-1: _HTML e CSS - Formulários_
+- [x] 6-2: _Bibliotecas Javascript e Estruturas CSS_
+- [x] 6-3: _CSS Flexbox - Parte 1_
+- [x] 6-4: _CSS Flexbox - Parte 2_
+- [x] 6-5: _CSS responsivo - Mobile First_
+- [x] 6-6: _ [Projeto - página inicial do Facebook] () _
 
 ##### Bloco 7: JavaScript ES6 e testes de unidade
 
-- [ ] 7-1: _JavaScript ES6 - let, const, funções de seta e literais de modelo_
-- [ ] 7-2: _JavaScript ES6 - Objetos_
-- [ ] 7-3: _Testes unitários em JavaScript_
-- [ ] 7-4: _ [Projeto - Testes de Unidade JavaScript] () _
+- [x] 7-1: _JavaScript ES6 - let, const, funções de seta e literais de modelo_
+- [x] 7-2: _JavaScript ES6 - Objetos_
+- [x] 7-3: _Testes unitários em JavaScript_
+- [x] 7-4: _ [Projeto - Testes de Unidade JavaScript] () _
 
 ##### Bloco 8: JavaScript ES6
 
-- [ ] 8-1: _JavaScript ES6 - Funções de ordem superior - forEach, find, some, every, sort_
-- [ ] 8-2: _JavaScript ES6 - Funções de ordem superior - mapa e filtro_
-- [ ] 8-3: _JavaScript ES6 - Funções de ordem superior - reduce_
-- [ ] 8-4: _JavaScript ES6 - operador de propagação, parâmetro de descanso, desestruturação e mais_
-- [ ] 8-5: _ [Projeto - Funções do zoológico] () _
+- [x] 8-1: _JavaScript ES6 - Funções de ordem superior - forEach, find, some, every, sort_
+- [x] 8-2: _JavaScript ES6 - Funções de ordem superior - mapa e filtro_
+- [x] 8-3: _JavaScript ES6 - Funções de ordem superior - reduce_
+- [x] 8-4: _JavaScript ES6 - operador de propagação, parâmetro de descanso, desestruturação e mais_
+- [x] 8-5: _ [Projeto - Funções do zoológico] () _
 
 ##### Bloco 9: assincronia e retornos de chamada
 
-- [ ] 9-1: _JavaScript assíncrono e retornos de chamada_
-- [ ] 9-2: _Promessas JavaScript_
-- [ ] 9-3: _ [Projeto - Carrinho de Compras] () _
+- [x] 9-1: _JavaScript assíncrono e retornos de chamada_
+- [x] 9-2: _Promessas JavaScript_
+- [x] 9-3: _ [Projeto - Carrinho de Compras] () _
 
 ##### Bloco 10: Brincadeira
 
-- [ ] 10-1: _Primeiros passos na brincadeira_
-- [ ] 10-2: _Jest - Testes Assíncronos_
-- [ ] 10-3: _Jest - Simulando Comportamentos_
-- [ ] 10-4: _ [Projeto - Montagem e Simulação de Brincadeiras] () _
+- [x] 10-1: _Primeiros passos na brincadeira_
+- [x] 10-2: _Jest - Testes Assíncronos_
+- [x] 10-3: _Jest - Simulando Comportamentos_
+- [x] 10-4: _ [Projeto - Montagem e Simulação de Brincadeiras] () _
 
 ## Desenvolvimento front-end:hourglass_flowing_sand:
 
-##### Bloco 11: Introdução - Reagir
+##### Bloco 11: Introdução - React
 
-- [ ] 11-1: _'Olá, mundo!' não reaja! _
-- [ ] 11-2: _Componentes do React_
-- [ ] 11-3: _ [Projeto - Biblioteca de Cartões de Filme] () _
+- [x] 11-1: _'Olá, mundo!' não reaja! _
+- [x] 11-2: _Componentes do React_
+- [x] 11-3: _ [Projeto - Biblioteca de Cartões de Filme] () _
 
-##### Bloco 12: Reagir
+##### Bloco 12: React
 
-- [ ] 12-1: _Componentes com status_
-- [ ] 12-2: _React Events and Forms_
-- [ ] 12-3: _ [Projeto - Biblioteca de cartões de filme com estado] () _
+- [x] 12-1: _Componentes com status_
+- [x] 12-2: _React Events and Forms_
+- [x] 12-3: _ [Projeto - Biblioteca de cartões de filme com estado] () _
 
-##### Bloco 13: Reagir
+##### Bloco 13: React
 
-- [ ] 13-1: _Melhorando a reutilização de componentes: props.children e PropTypes_
-- [ ] 13-2: _React Component Lifecycle_
-- [ ] 13-3: _React Router_
-- [ ] 13-4: _ [Projeto - Biblioteca de Cartões de Filme CRUD] () _
+- [x] 13-1: _Melhorando a reutilização de componentes: props.children e PropTypes_
+- [x] 13-2: _React Component Lifecycle_
+- [x] 13-3: _React Router_
+- [x] 13-4: _ [Projeto - Biblioteca de Cartões de Filme CRUD] () _
 
-##### Bloco 14: Metodologias geológicas
+##### Bloco 14: Metodologias Ágeis
 
-- [ ] 14-1: _Metodologias à Geis_
-- [ ] 14-2: _ [Projeto - Loja Online Frontend] () _
+- [x] 14-1: _Metodologias àgeis_
+- [x] 14-2: _ [Projeto - Loja Online Frontend] () _
 
 ##### Bloco 15: Testes de reação
 
-- [ ] 15-1: _Testando React com React Testing Library_
-- [ ] 15-2: _Testando o React com a Biblioteca de Testes do React - Parte 2_
+- [x] 15-1: _Testando React com React Testing Library_
+- [x] 15-2: _Testando o React com a Biblioteca de Testes do React - Parte 2_
 - [ ] 15-3: _ [Projeto - Testes de reação] () _
 
 ##### Bloco 16: Introdução ao Redux
