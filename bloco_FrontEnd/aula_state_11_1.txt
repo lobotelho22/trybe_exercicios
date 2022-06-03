@@ -1,0 +1,55 @@
+React tem pilares básicos: renderização (já visto), condicional (a ver), props (já visto) e o tema de hoje, estado.
+
+=> recapitulação JS: Classes
+
+    Classe é basicamente uma forma de se criar objetos. É um conjunto de dados e funcionalidades(propriedades e métodos).
+
+    Ex.:
+
+    class Person {
+        name = 'My Friend';
+        age = 18;
+
+        sayHello() {
+            console.log (`eu nome é ${this.name} e eu tenho ${this.age} anos`)
+        }
+    }
+
+    // const myFriend = new Person();
+
+    myFriend.sayHello
+
+    class Tryber extends Person{ // Aqui a classe Tryber se estende em direção  à classe Person
+        github = 'ferssoares'
+    }
+
+    const myFriend = new Person(); // Aqui ela retorna as informações de Tryber e Person
+
+    
+    Ex: Podemos fazer a criação da classe ser uma construtora de objeto, com a função 'constructor'
+
+    class Person {
+        
+        constructor {
+            this.name = name;
+            this.age = age;
+        }
+        
+        sayHello() {
+            console.log (`eu nome é ${this.name} e eu tenho ${this.age} anos`)
+        }
+    }
+    
+    const myFriend = new Person(Fernando, 35) // aqui o comando 'new' inicia a construção de um objeto, utilizando a função constructor definida em Person
+
+=> Recapitulando: Componentes, Props e chegaremos a Estado...
+
+    Componentes: são formas de construit algo reutilizǘel, são blocos de código e funções ou classes que retornam JSX (elemento react // representação de Doom)
+
+    Props: são "parâmetros" de um componente, são passados pelo componente pai, deixam um componente dinâmico dinâmico ("rerenderização"), props são read-only
+
+    Estado / State: "momento" atual do componente, é uma forma de "atualizar" o componente, dinamizar além das props (por dentro)
+
+=> O que é estado? Como inicializar estado na aplicação? Como atualizar o nosso estado? Entender o que são eventos e utilizar na prática, eventos.
+
+    Cara, aqui só vendo a aula: o Cestari dá muita informação, o código é bem extenso e vale a pena, pq o exemplo foi feito do zero.
