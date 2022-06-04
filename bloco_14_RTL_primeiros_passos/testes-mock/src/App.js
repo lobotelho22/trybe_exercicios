@@ -1,28 +1,47 @@
 import React from 'react';
-import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      joke: '',
+      nome: '',
+      email: '',
     }
+    this.handleInput = this.handleInput.bind(this); 
   }
 
-  componentDidMount() {
-    const API_URL = 'https://icanhazdadjoke.com/';
-    fetch(API_URL, { headers: { Accept: 'application/json' } })
-      .then((response) => response.json())
-      .then((data) => this.setState({ joke: data.joke, id: data.id, status: data.status }));
+  handleInput(event) {
+    const { name, value } = event.target;
+    console.log(event.target);
+    console.log(name, value);
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
-    const { joke } = this.state;
-  
-    return (
-      <div className="App">
-        <h1>Teste</h1>
-        { joke }
+    const { nome, email } = this.state;
+    return(
+      <div>
+        <h1>Teste de Inputs</h1>
+        <p>
+          <label htmlFor="nome">
+            Nome:
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              value={ nome }
+              onChange={ this.handleInput }
+            />
+          </label>
+        </p>
+        <p>
+          <label htmlFor="email">
+            Email:
+            <input type="text" id="email" name="email" value={email} onChange={this.handleInput} />
+          </label>
+        </p>
       </div>
     )
   }
