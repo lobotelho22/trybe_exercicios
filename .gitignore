@@ -1,2 +1,3 @@
 #Ignorar todos os arquivos localizados no diretório editing
 editing/
+bloco_15_REDUX_gerenciamentoDeEstado/01_Gerenciamento_de_Estado_com_Redux/testes-redux/node_modules
