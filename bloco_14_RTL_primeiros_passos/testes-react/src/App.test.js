@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { findByText, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
@@ -41,4 +41,24 @@ test('Verificando se o botão e o campo email estão funcionando', () => {
 
   expect(inputEmail).toHaveValue('');
   expect(textEmail).toHaveTextContent(`Valor: ${EMAIL_USER}`);
+})
+
+it('Verificando a chamada da API dos cachorros...', async () => {
+  const returned = ['https://images.dog.ceo/breeds/husky/20180901_150234.jpg', 'https://images.dog.ceo/breeds/husky/20180904_185604.jpg'];
+
+  // jest.spyOn(global, 'fetch');
+  // global.fetch.mockResolvedValue({
+  //   json: jest.fn().mockResolvedValue(returned),
+  // });
+
+  jest.spyOn(global, 'fetch');
+  global.fetch.mockResolvedValue({
+    json: jest.fn().mockResolvedValue(returned),
+  });
+  
+  render(<App />);
+  expect(global.fetch).toBeCalledTimes(1);
+  expect(global.fetch).toBeCalledWith('https://dog.ceo/api/breed/husky/images');
+  // const loaded = await screen.findByText(/Doguinhos/i)
+  // console.log(loaded);
 })

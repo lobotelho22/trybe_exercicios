@@ -9,7 +9,18 @@ class App extends React.Component {
     this.state = {
       email: '',
       saveEmail: '',
+      arrayImg: '',
     }
+  }
+
+  async componentDidMount() {
+    const url = 'https://dog.ceo/api/breed/husky/images';
+    const arrayImg = await fetch(url)
+        .then((response) => response.json())
+        .then((data) => data.message);
+    this.setState({
+      arrayImg,
+    });
   }
 
   changeEmail = (value) => {
@@ -28,7 +39,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { email, saveEmail } = this.state;
+    const { email, saveEmail, arrayImg } = this.state;
+    const testArray = Array.isArray(arrayImg);
     return (
       <div className="App">
         <label htmlFor="id-email">
@@ -49,6 +61,18 @@ class App extends React.Component {
           />
         <input id="btn-back" type="button" value="Voltar" />
         <ValidEmail email={ saveEmail } />
+        {  testArray
+            ? <div>
+              <p>Doguinhos</p>
+              { arrayImg.map((dogURL, index) => {
+              return (
+              <article key={`doguinho${index}`}>
+                <img src={dogURL} alt="doguinho fofo" width="300px" />
+              </article>
+              )
+            }) }</div>
+            : <p>carregando...</p>
+        }
       </div>
     );
   }
