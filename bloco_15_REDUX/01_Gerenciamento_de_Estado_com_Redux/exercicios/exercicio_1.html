@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p>Color: <span id="value">white</span></p>
+        <button id="previous">Previous color</button>
+        <button id="next">Next color</button>
+        <button id="random">Random Color</button>
+    </div>
+    <script>
+        const INITIAL_STATE = {
+            colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+            index: 0,
+        };
+
+        function criarCor() {
+            const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+            let cor = '#';
+            const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+            for (let i = 0; i < 6; i += 1) {
+                cor += oneChar[aleatorio()];
+            }
+            return cor;
+        }
+
+        const reducer = (state = INITIAL_STATE, action) => {
+            switch (action.type) {
+                case ("NEXT"):
+                    switch (state.index) {
+                        case state.colors.length - 1:
+                            return {
+                                ...state,
+                                index: 0,
+                            }
+                        default:
+                            return {
+                                ...state,
+                                index: state.index + 1,
+                            }
+                    }
+                case ("PREVIOUS"):
+                    switch (state.index) {
+                        case 0:
+                            return {
+                                ...state,
+                                index: state.colors.length - 1,
+                            }
+                        default:
+                            return {
+                                ...state,
+                                index: state.index - 1,
+                            }
+                    }
+                case ("RANDOM"):
+                    const randomColor = criarCor();
+                    const arrColors = state.colors;
+                    arrColors.push(randomColor)
+
+                    return {
+                        ...state,
+                        colors: arrColors,
+                        index: state.colors.length-1,
+                    }
+                default:
+                    return {
+                        ...state,
+                    };
+            }
+        }
+
+        const store = Redux.createStore(reducer);
+
+        const previous = document.getElementById("previous");
+        const next = document.getElementById("next");
+        const random = document.getElementById("random");
+
+        previous.addEventListener('click', () => {
+            store.dispatch({ type: "PREVIOUS" });
+        });
+
+        next.addEventListener('click', () => {
+            store.dispatch({ type: "NEXT" })
+        });
+
+        random.addEventListener('click', () => {
+            store.dispatch({ type: "RANDOM" })
+        })
+
+        store.subscribe(() => {
+            {
+                const { colors, index } = store.getState()
+                const selectedColor = colors[index];
+                const value = document.getElementById("value");
+                const pColor = document.querySelectorAll('p')[0];
+                value.innerText = selectedColor;
+                if (value.innerText !== 'black') {
+                    value.setAttribute('style', 'color: black');
+                    pColor.setAttribute('style', 'color: black');
+                }
+                if (value.innerText === 'black') {
+                    value.setAttribute('style', 'color: white');
+                    pColor.setAttribute('style', 'color: white');
+                }
+                const containerColor = document.getElementById("container");
+                containerColor.setAttribute('style', `background-color: ${selectedColor}`);
+            }
+        });
+    </script>
+</body>
+
+</html>
